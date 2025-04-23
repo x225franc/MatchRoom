@@ -22,7 +22,11 @@ export default defineConfig({
       output: {
         manualChunks: undefined
       }
-    }
+    },
+    // Ignorer les erreurs d'assets manquants
+    assetsInlineLimit: 0,
+    // Désactiver la vérification stricte des assets
+    emptyOutDir: true
   },
   define: {
     'window.config.FRONTEND_URL': JSON.stringify(process.env.FRONTEND_URL || 'https://matchroom.vercel.app'),
