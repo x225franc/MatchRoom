@@ -1,0 +1,2 @@
+# Ignorer les assets pour le build initial
+src/assets/*
