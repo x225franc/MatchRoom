@@ -2,7 +2,7 @@
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import { useRoute } from 'vue-router'
-import { ref, onMounted, watchEffect } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const route = useRoute()
 const isDark = ref(false)
@@ -19,6 +19,7 @@ const toggleDarkMode = () => {
 
 onMounted(() => {
   const saved = localStorage.getItem('theme')
+
   if (saved === 'dark') {
     isDark.value = true
   } else if (saved === 'light') {
@@ -26,10 +27,7 @@ onMounted(() => {
   } else {
     isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
   }
-  applyTheme(isDark.value)
-})
 
-watchEffect(() => {
   applyTheme(isDark.value)
 })
 </script>
@@ -37,7 +35,7 @@ watchEffect(() => {
 <template>
   <div>
     <Header v-if="route.meta.showHeaderFooter" :isDark="isDark" :toggleDarkMode="toggleDarkMode" />
-    <router-view />
+    <router-view  :isDark="isDark" :toggleDarkMode="toggleDarkMode"/>
     <Footer v-if="route.meta.showHeaderFooter" />
   </div>
 </template>

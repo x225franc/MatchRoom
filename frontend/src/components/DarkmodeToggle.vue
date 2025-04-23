@@ -1,18 +1,22 @@
 <template>
-    <button
-      @click="toggleDarkMode"
-      class="flex items-center gap-2 px-3 py-1 rounded text-sm font-medium transition
-             bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600"
+  <div
+    @click="toggleDarkMode"
+    class="w-16 h-8 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300"
+    :class="isDark ? 'bg-black' : 'bg-gray-300'"
+  >
+    <div
+      class="w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center text-white"
+      :class="isDark ? 'translate-x-8 bg-white text-black' : 'translate-x-0 bg-white text-yellow-500'"
     >
-      <span v-if="isDark">🌙 Dark Mode</span>
-      <span v-else>☀️ Light Mode</span>
-    </button>
-  </template>
-  
-  <script setup>
-  defineProps({
-    isDark: Boolean,
-    toggleDarkMode: Function
-  })
-  </script>
-  
+      <span v-if="isDark">🌙</span>
+      <span v-else>☀️</span>
+    </div>
+  </div>
+</template>
+
+<script setup>
+defineProps({
+  isDark: Boolean,
+  toggleDarkMode: Function
+})
+</script>
