@@ -1,7 +1,11 @@
 <template>
-	<div>Header</div>
-</template>
-
-<script></script>
-
-<style scoped></style>
+	<header class="flex justify-end p-4">
+	  <DarkModeToggle :isDark="isDark" :toggleDarkMode="toggleDarkMode" />
+	</header>
+  </template>
+  
+  <script setup>
+  import DarkModeToggle from '@/components/DarkModeToggle.vue'
+  defineProps(['isDark', 'toggleDarkMode'])
+  </script>
+  
