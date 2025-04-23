@@ -3,15 +3,15 @@ import pool from "../config/db.js";
 const User = {
   create: async ({ email, password, name }) => {
     const query = `
-    INSERT INTO users (email, password, name, roles, created_at)
+    INSERT INTO users (email, password, name, role, created_at)
       VALUES ($1, $2, $3, $4, $5)
-      RETURNING id, email, name, roles
+      RETURNING id, email, name, role
     `;
     const { rows } = await pool.query(query, [
       email,
       password,
       name,
-      ["member"],
+      "member",
       new Date(),
     ]);
     return rows[0];

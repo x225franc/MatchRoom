@@ -34,6 +34,8 @@ const register = async (req, res) => {
   }
 };
 
+
+
 const login = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -55,7 +57,7 @@ const login = async (req, res) => {
       return res.json({ requires2FA: true, userId: user.id });
     }
 
-    const token = generateJWT(user.id);
+    const token = generateJWT(user.id, user.roles);
     const expiresAt = new Date(Date.now() + 3600000); // 1h
     await User.updateSession(user.id, token, expiresAt);
     res.json({ token, roles: user.roles });
@@ -99,10 +101,10 @@ const verify2FA = async (req, res) => {
       return res.status(401).json({ message: "Code 2FA invalide" });
     }
 
-    const jwtToken = generateJWT(user.id);
+    const jwtToken = generateJWT(user.id, user.roles);
     const expiresAt = new Date(Date.now() + 3600000);
     await User.updateSession(user.id, jwtToken, expiresAt);
-    res.json({ token: jwtToken });
+    res.json({ token: jwtToken, roles: user.roles });
   } catch (err) {
     res.status(500).json({
       message: "Erreur lors de la vérification 2FA",
@@ -121,5 +123,7 @@ const logout = async (req, res) => {
       .json({ message: "Erreur lors de la déconnexion", error: err.message });
   }
 };
+
+
 
 export { register, login, setup2FA, verify2FA, logout };
