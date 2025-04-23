@@ -15,10 +15,17 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  server: {
-    port: 3000
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
   define: {
-    'window.config.FRONTEND_URL': JSON.stringify(process.env.FRONTEND_URL)
+    'window.config.FRONTEND_URL': JSON.stringify(process.env.FRONTEND_URL || 'https://matchroom.vercel.app'),
+    'window.config.BACKEND_URL': JSON.stringify(process.env.BACKEND_URL || 'http://localhost:3000'),
   }
 })
