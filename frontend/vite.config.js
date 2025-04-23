@@ -19,6 +19,7 @@ export default defineConfig({
     port: 3000
   },
   define: {
-    'window.config.FRONTEND_URL': JSON.stringify(process.env.FRONTEND_URL)
+    'window.config.FRONTEND_URL': JSON.stringify(process.env.FRONTEND_URL || 'https://matchrooms.vercel.app'),
+    'window.config.BACKEND_URL': JSON.stringify(process.env.BACKEND_URL || 'http://localhost:3000'),
   }
 })

@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 backend/node_modules
+backend/.env
 frontend/node_modules
 .DS_Store
 dist
@@ -30,3 +31,4 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+frontend/.env

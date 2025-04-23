@@ -31,26 +31,26 @@ const User = {
     return rows[0];
   },
 
-  update2FASecret: async (id, secret) => {
-    await pool.query(
-      "UPDATE users SET two_factor_secret = $1, two_factor_enabled = TRUE WHERE id = $2",
-      [secret, id]
-    );
-  },
+  // update2FASecret: async (id, secret) => {
+  //   await pool.query(
+  //     "UPDATE users SET two_factor_secret = $1, two_factor_enabled = TRUE WHERE id = $2",
+  //     [secret, id]
+  //   );
+  // },
 
-  updateSession: async (id, sessionToken, expiresAt) => {
-    await pool.query(
-      "UPDATE users SET session_token = $1, session_expires_at = $2 WHERE id = $3",
-      [sessionToken, expiresAt, id]
-    );
-  },
+  // updateSession: async (id, sessionToken, expiresAt) => {
+  //   await pool.query(
+  //     "UPDATE users SET session_token = $1, session_expires_at = $2 WHERE id = $3",
+  //     [sessionToken, expiresAt, id]
+  //   );
+  // },
 
-  clearSession: async (id) => {
-    await pool.query(
-      "UPDATE users SET session_token = NULL, session_expires_at = NULL WHERE id = $1",
-      [id]
-    );
-  },
+  // clearSession: async (id) => {
+  //   await pool.query(
+  //     "UPDATE users SET session_token = NULL, session_expires_at = NULL WHERE id = $1",
+  //     [id]
+  //   );
+  // },
 };
 
 export default User;

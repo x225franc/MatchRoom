@@ -1,11 +1,10 @@
 import bcrypt from "bcrypt";
-import speakeasy from "speakeasy";
 import dotenv from "dotenv";
 dotenv.config();
 import User from "../models/usersModel.js";
 import {
   generateJWT,
-  verify2FA as verify2FAToken,
+  /*verify2FA as verify2FAToken,*/
 } from "../utils/authUtils.js";
 
 const register = async (req, res) => {
@@ -66,50 +65,50 @@ const login = async (req, res) => {
   }
 };
 
-const setup2FA = async (req, res) => {
-  try {
-    const user = await User.findById(req.userId);
-    if (user.two_factor_enabled) {
-      return res.status(400).json({ message: "2FA déjà configuré" });
-    }
+// const setup2FA = async (req, res) => {
+//   try {
+//     const user = await User.findById(req.userId);
+//     if (user.two_factor_enabled) {
+//       return res.status(400).json({ message: "2FA déjà configuré" });
+//     }
 
-    const secret = speakeasy.generateSecret({
-      name: `TinderHotels:${user.email}`,
-    });
-    await User.update2FASecret(user.id, secret.base32);
-    res.json({ qrCode: secret.otpauth_url });
-  } catch (err) {
-    res.status(500).json({
-      message: "Erreur lors de la configuration 2FA",
-      error: err.message,
-    });
-  }
-};
+//     const secret = speakeasy.generateSecret({
+//       name: `TinderHotels:${user.email}`,
+//     });
+//     await User.update2FASecret(user.id, secret.base32);
+//     res.json({ qrCode: secret.otpauth_url });
+//   } catch (err) {
+//     res.status(500).json({
+//       message: "Erreur lors de la configuration 2FA",
+//       error: err.message,
+//     });
+//   }
+// };
 
-const verify2FA = async (req, res) => {
-  const { userId, token } = req.body;
-  try {
-    const user = await User.findById(userId);
-    if (!user || !user.two_factor_enabled) {
-      return res.status(400).json({ message: "2FA non configuré" });
-    }
+// const verify2FA = async (req, res) => {
+//   const { userId, token } = req.body;
+//   try {
+//     const user = await User.findById(userId);
+//     if (!user || !user.two_factor_enabled) {
+//       return res.status(400).json({ message: "2FA non configuré" });
+//     }
 
-    const verified = verify2FAToken(user.two_factor_secret, token);
-    if (!verified) {
-      return res.status(401).json({ message: "Code 2FA invalide" });
-    }
+//     const verified = verify2FAToken(user.two_factor_secret, token);
+//     if (!verified) {
+//       return res.status(401).json({ message: "Code 2FA invalide" });
+//     }
 
-    const jwtToken = generateJWT(user.id);
-    const expiresAt = new Date(Date.now() + 3600000);
-    await User.updateSession(user.id, jwtToken, expiresAt);
-    res.json({ token: jwtToken });
-  } catch (err) {
-    res.status(500).json({
-      message: "Erreur lors de la vérification 2FA",
-      error: err.message,
-    });
-  }
-};
+//     const jwtToken = generateJWT(user.id);
+//     const expiresAt = new Date(Date.now() + 3600000);
+//     await User.updateSession(user.id, jwtToken, expiresAt);
+//     res.json({ token: jwtToken });
+//   } catch (err) {
+//     res.status(500).json({
+//       message: "Erreur lors de la vérification 2FA",
+//       error: err.message,
+//     });
+//   }
+// };
 
 const logout = async (req, res) => {
   try {
@@ -122,4 +121,4 @@ const logout = async (req, res) => {
   }
 };
 
-export { register, login, setup2FA, verify2FA, logout };
+export { register, login, /*setup2FA, verify2FA, */ logout };
