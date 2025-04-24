@@ -14,7 +14,9 @@ const authMiddleware = async (req, res, next) => {
     );
     if (!rows[0])
       return res.status(401).json({ message: "Session invalide ou expirée" });
-    req.user = { id: decoded.id, roles: decoded.roles };
+    req.user = { id: decoded.id, role: decoded.role };
+    console.log(decoded);
+    
     req.userId = decoded.id;
     next();
   } catch (err) {
