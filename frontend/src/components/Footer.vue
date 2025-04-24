@@ -70,47 +70,11 @@
             </svg>
           </a>
         </div>
+      </div>
 
-        <!-- Navigation section -->
-        <div class="w-full md:w-1/3 lg:w-1/4">
-          <h3 class="text-lg font-semibold mb-4">Liens rapides</h3>
-          <ul class="space-y-3">
-            <li><a href="#" class="text-white/80 hover:text-white transition-colors">Accueil</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition-colors">À propos</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition-colors">FAQ</a></li>
-            <li><a href="#" class="text-white/80 hover:text-white transition-colors">Contact</a></li>
-          </ul>
-        </div>
+      <div>
 
-        <!-- Contact section -->
-        <div class="w-full md:w-1/3 lg:w-1/4">
-          <h3 class="text-lg font-semibold mb-4">Contact</h3>
-          <div class="flex items-center mb-3">
-            <a href="mailto:contact@matchroom.io" class="text-white/80 hover:text-white transition-colors">
-              contact@matchroom.io
-            </a>
-          </div>
-          
-          <!-- Social Media -->
-          <h3 class="text-lg font-semibold mb-3 mt-6">Suivez-nous</h3>
-          <div class="flex space-x-5">
-            <a href="#" aria-label="Instagram" class="text-white/80 hover:text-white transition-colors">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Existing SVG path for Instagram -->
-              </svg>
-            </a>
-            <a href="#" aria-label="Facebook" class="text-white/80 hover:text-white transition-colors">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Existing SVG path for Facebook -->
-              </svg>
-            </a>
-            <a href="#" aria-label="LinkedIn" class="text-white/80 hover:text-white transition-colors">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Existing SVG path for LinkedIn -->
-              </svg>
-            </a>
-          </div>
-        </div>
+      </div>
 
       <div>
         <h3 class="text-lg font-semibold mb-2">Newsletter</h3>
@@ -128,30 +92,28 @@
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              S'abonner
-            </button>
-          </div>
+              <path
+                d="M18 0H2C0.9 0 0.00999999 0.9 0.00999999 2L0 14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM17.6 4.25L10.53 8.67C10.21 8.87 9.79 8.87 9.47 8.67L2.4 4.25C2.29973 4.19371 2.21192 4.11766 2.14189 4.02645C2.07186 3.93525 2.02106 3.83078 1.99258 3.71937C1.96409 3.60796 1.9585 3.49194 1.97616 3.37831C1.99381 3.26468 2.03434 3.15581 2.09528 3.0583C2.15623 2.96079 2.23632 2.87666 2.33073 2.811C2.42513 2.74533 2.53187 2.69951 2.6445 2.6763C2.75712 2.65309 2.87328 2.65297 2.98595 2.67595C3.09863 2.69893 3.20546 2.74453 3.3 2.81L10 7L16.7 2.81C16.7945 2.74453 16.9014 2.69893 17.014 2.67595C17.1267 2.65297 17.2429 2.65309 17.3555 2.6763C17.4681 2.69951 17.5749 2.74533 17.6693 2.811C17.7637 2.87666 17.8438 2.96079 17.9047 3.0583C17.9657 3.15581 18.0062 3.26468 18.0238 3.37831C18.0415 3.49194 18.0359 3.60796 18.0074 3.71937C17.9789 3.83078 17.9281 3.93525 17.8581 4.02645C17.7881 4.11766 17.7003 4.19371 17.6 4.25Z"
+                fill="lightgray"
+              />
+            </svg>
+          </span>
         </div>
       </div>
     </div>
-    
-    <!-- Bottom section with copyright -->
-    <div class="border-t border-white/20">
-      <div class="container mx-auto px-6 py-6">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-white/60 mb-4 md:mb-0">©2025 - Matchroom SAS. Tous droits réservés.</p>
-          <div class="flex space-x-6">
-            <a href="#" class="text-white/60 hover:text-white transition-colors text-sm">
-              Conditions d'utilisation
-            </a>
-            <a href="#" class="text-white/60 hover:text-white transition-colors text-sm">
-              Politique de confidentialité
-            </a>
-          </div>
-        </div>
-      </div>
+
+    <div class="border-t border-white/30 my-6"></div>
+
+    <div
+      class="text-sm text-center md:text-left flex flex-col md:flex-row justify-between space-y-2 md:space-y-0"
+    >
+      <a href="#" class="hover:underline">Conditions d’utilisations</a>
+      <p>©2025 - Matchroom SAS</p>
+      <a href="#" class="hover:underline">Politique de confidentialité</a>
     </div>
   </footer>
 </template>
 
 <script setup></script>
+
+<style scoped></style>
