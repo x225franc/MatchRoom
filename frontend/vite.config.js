@@ -29,7 +29,8 @@ export default defineConfig({
     emptyOutDir: true
   },
   define: {
-    'window.config.FRONTEND_URL': JSON.stringify(process.env.FRONTEND_URL || 'https://matchroom.vercel.app'),
+    'window.config.FRONTEND_URL': JSON.stringify(process.env.FRONTEND_URL || 'https://matchrooms.vercel.app'),
+
     'window.config.BACKEND_URL': JSON.stringify(process.env.BACKEND_URL || 'http://localhost:3000'),
   }
 })
