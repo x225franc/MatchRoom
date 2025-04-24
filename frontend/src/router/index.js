@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home.vue';
+import Choice from '@/views/Choice.vue';
 import Signin from '@/views/User/Signin.vue';
 import Signout from '@/views/User/Signout.vue';
 import Signup from '@/views/User/Signup.vue';
@@ -15,6 +16,7 @@ const routes = [
 
     { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { title: 'Dashboard', showHeaderFooter: false } },
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('@/views/Notfound.vue'), meta: { title: '404 - Page non trouvée', showHeaderFooter: false } },
+    { path: '/choice', name: 'Choice', component: Choice, meta: { title: 'Choice', showHeaderFooter: true } }
 ];
 
 const router = createRouter({
