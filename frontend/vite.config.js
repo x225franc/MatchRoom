@@ -15,11 +15,22 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  server: {
-    port: 3000
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    },
+    // Ignorer les erreurs d'assets manquants
+    assetsInlineLimit: 0,
+    // Désactiver la vérification stricte des assets
+    emptyOutDir: true
   },
   define: {
     'window.config.FRONTEND_URL': JSON.stringify(process.env.FRONTEND_URL || 'https://matchrooms.vercel.app'),
+
     'window.config.BACKEND_URL': JSON.stringify(process.env.BACKEND_URL || 'http://localhost:3000'),
   }
 })
