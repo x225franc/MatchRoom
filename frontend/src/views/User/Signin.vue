@@ -24,8 +24,8 @@
 							type="email"
 							id="email"
 							v-model="email"
-                            placeholder="Entrer votre email"
-							class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+							placeholder="Entrer votre email"
+							class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
 							required
 						/>
 					</div>
@@ -40,24 +40,13 @@
 							type="password"
 							id="password"
 							v-model="password"
-                            placeholder="Entrer votre mot de passe"
-							class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+							placeholder="Entrer votre mot de passe"
+							class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
 							required
 						/>
 					</div>
 
 					<div class="flex items-center justify-between">
-						<div class="flex items-center">
-							<input
-								type="checkbox"
-								id="remember"
-								v-model="rememberMe"
-								class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-							/>
-							<label for="remember" class="ml-2 text-sm text-gray-700"
-								>Se souvenir de moi</label
-							>
-						</div>
 						<a href="#" class="text-sm text-blue-600 hover:underline"
 							>Mot de passe oublié?</a
 						>
@@ -66,7 +55,7 @@
 					<div>
 						<button
 							type="submit"
-							class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+							class="w-full bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
 							:disabled="isLoading"
 						>
 							{{ isLoading ? "Connexion..." : "Se connecter" }}
@@ -87,7 +76,7 @@
 							type="text"
 							id="token"
 							v-model="twoFactorToken"
-							class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+							class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
 							maxlength="6"
 							inputmode="numeric"
 							pattern="[0-9]*"
@@ -102,7 +91,7 @@
 					<div>
 						<button
 							type="submit"
-							class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+							class="w-full bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
 							:disabled="isLoading"
 						>
 							{{ isLoading ? "Vérification..." : "Vérifier" }}
@@ -143,7 +132,6 @@
 			return {
 				email: "",
 				password: "",
-				rememberMe: false,
 				isLoading: false,
 				errorMessage: "",
 				requires2FA: false,
@@ -163,14 +151,14 @@
 				}
 				return true;
 			},
-			
+
 			async handleLogin() {
 				this.errorMessage = "";
-				
+
 				if (!this.validateLoginForm()) {
 					return;
 				}
-				
+
 				try {
 					this.isLoading = true;
 
@@ -198,18 +186,24 @@
 						if (status === 401) {
 							this.errorMessage = "Email ou mot de passe incorrect";
 						} else if (status === 429) {
-							this.errorMessage = "Trop de tentatives de connexion. Veuillez réessayer plus tard";
+							this.errorMessage =
+								"Trop de tentatives de connexion. Veuillez réessayer plus tard";
 						} else if (status === 403) {
-							this.errorMessage = "Votre compte est bloqué. Veuillez contacter l'administrateur";
+							this.errorMessage =
+								"Votre compte est bloqué. Veuillez contacter l'administrateur";
 						} else if (status === 500) {
-							this.errorMessage = "Erreur serveur. Veuillez réessayer plus tard";
+							this.errorMessage =
+								"Erreur serveur. Veuillez réessayer plus tard";
 						} else {
-							this.errorMessage = error.response.data.message || "Échec de la connexion";
+							this.errorMessage =
+								error.response.data.message || "Échec de la connexion";
 						}
 					} else if (error.request) {
-						this.errorMessage = "Impossible de joindre le serveur. Vérifiez votre connexion internet";
+						this.errorMessage =
+							"Impossible de joindre le serveur. Vérifiez votre connexion internet";
 					} else {
-						this.errorMessage = "Erreur lors de l'envoi de la demande de connexion";
+						this.errorMessage =
+							"Erreur lors de l'envoi de la demande de connexion";
 					}
 					console.error("Erreur de connexion:", error);
 				} finally {
@@ -231,11 +225,11 @@
 
 			async handle2FAVerification() {
 				this.errorMessage = "";
-				
+
 				if (!this.validate2FAForm()) {
 					return;
 				}
-				
+
 				try {
 					this.isLoading = true;
 
@@ -256,15 +250,21 @@
 							this.errorMessage = "Code d'authentification incorrect";
 						} else if (status === 400) {
 							this.errorMessage = "Code d'authentification invalide ou expiré";
-						} else if (status === 429) {
-							this.errorMessage = "Trop de tentatives. Veuillez réessayer plus tard";
-						} else {
-							this.errorMessage = error.response.data.message || "Échec de la vérification";
+						} 
+						// else if (status === 429) {
+						// 	this.errorMessage =
+						// 		"Trop de tentatives. Veuillez réessayer plus tard";
+						// } 
+						else {
+							this.errorMessage =
+								error.response.data.message || "Échec de la vérification";
 						}
 					} else if (error.request) {
-						this.errorMessage = "Impossible de joindre le serveur. Vérifiez votre connexion internet";
+						this.errorMessage =
+							"Impossible de joindre le serveur. Vérifiez votre connexion internet";
 					} else {
-						this.errorMessage = "Erreur lors de l'envoi du code d'authentification";
+						this.errorMessage =
+							"Erreur lors de l'envoi du code d'authentification";
 					}
 					console.error("Erreur de vérification 2FA:", error);
 				} finally {
@@ -273,9 +273,8 @@
 			},
 
 			handleAuthSuccess(token) {
-				// Stocker le token dans les cookies ou localStorage
-				const storage = this.rememberMe ? Cookies : sessionStorage;
-				storage.set("authToken", token);
+				// Stocker le token dans le localStorage
+				localStorage.setItem("authToken", token);
 
 				// Configurer l'en-tête pour les futures requêtes
 				axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
