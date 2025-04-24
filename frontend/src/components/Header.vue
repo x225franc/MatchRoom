@@ -2,9 +2,7 @@
   <header
     class="relative w-full bg-gradient-to-b from-[#BAA089] to-[#E8CEB7] text-white px-6 py-4 flex items-center justify-between transition-colors duration-300"
   >
-    <!-- left side: burger on mobile, logo on desktop -->
     <div class="flex items-center">
-      <!-- burger menu (mobile) -->
       <button
         @click="showMenu = !showMenu"
         class="md:hidden p-2 focus:outline-none"
@@ -15,17 +13,11 @@
                 d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
-      <!-- logo (desktop) -->
-      <h1 class="hidden md:block text-2xl font-bold">Matchroom</h1>
-    </div>
+     <img src="/logo.png"  alt="Matchroom" class="hidden md:block ml-5 mt-1 w-20" />
+  </div>
 
-    <!-- desktop nav -->
     <nav class="hidden md:flex items-center space-x-6 text-sm md:text-base">
-      <a href="#" class="hover:underline">Accueil</a>
-      <a href="#" class="hover:underline">A propos</a>
-      <a href="#" class="hover:underline">FAQ</a>
 
-      <!-- DarkMode toggle -->
       <button @click="toggleDarkMode">
         <span v-if="isDark"
           ><svg
@@ -41,7 +33,7 @@
             />
           </svg>
         </span>
-        <span v-else
+        <span v-else 
           ><svg
             width="30"
             height="31"
@@ -61,10 +53,9 @@
         </span>
       </button>
 
-      <a href="#" class="hover:underline">Se connecter</a>
+      <a href="#" class="hover:underline mb-1">Se connecter</a>
     </nav>
 
-    <!-- mobile quick actions: DarkMode + Se connecter -->
     <div class="flex items-center space-x-4 md:hidden">
       <button @click="toggleDarkMode">
         <span v-if="isDark"
@@ -103,15 +94,12 @@
       <a href="#" class="hover:underline text-sm">Se connecter</a>
     </div>
 
-    <!-- mobile slide-out menu with overlay -->
     <transition name="fade">
       <div
         v-if="showMenu"
         class="fixed inset-0 flex z-50"
       >
-        <!-- slide-out drawer -->
         <nav class="w-3/5 h-screen bg-gradient-to-r from-[#BAA089] to-[#E8CEB7] flex flex-col p-6">
-          <!-- close button -->
           <button @click="showMenu = false" class="self-end mb-6 p-2 focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                  viewBox="0 0 24 24" stroke="currentColor">
@@ -124,7 +112,6 @@
           <a href="#" class="block py-2 hover:underline">FAQ</a>
         </nav>
 
-        <!-- overlay to blur and close menu on click -->
         <div
           @click="showMenu = false"
           class="w-2/5 h-screen backdrop-blur-sm"

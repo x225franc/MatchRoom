@@ -1,6 +1,5 @@
 <template>
 	<div class="landing-page">
-		<!-- En-tête/Hero Section -->
 		<section class="bg-gradient-to-r from-primary to-secondary text-tertiary-2">
 			<div class="container mx-auto px-4 py-16 md:py-24">
 				<div class="flex flex-col md:flex-row items-center justify-between">
@@ -40,7 +39,6 @@
 			</div>
 		</section>
 
-		<!-- Section Problématique -->
 		<section class="py-16 bg-tertiary-2">
 			<div class="container mx-auto px-4">
 				<h2
@@ -198,7 +196,6 @@
 			</div>
 		</section>
 
-		<!-- Section Solution -->
 		<section class="py-16 bg-white">
 			<div class="container mx-auto px-4">
 				<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -301,8 +298,6 @@
 				</div>
 			</div>
 		</section>
-
-		<!-- Section Fonctionnement -->
 
 		<section class="py-16 bg-primary-light">
 			<div class="container mx-auto px-4">
@@ -470,7 +465,6 @@
 			</div>
 		</section>
 
-		<!-- Section Avantages -->
 		<section class="py-16 bg-white">
 			<div class="container mx-auto px-4">
 				<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -654,7 +648,6 @@
 			</div>
 		</section>
 
-		<!-- Section Témoignages -->
 		<section class="py-16 bg-tertiary-2">
 			<div class="container mx-auto px-4">
 				<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -709,7 +702,6 @@
 			</div>
 		</section>
 
-		<!-- Section Vision -->
 		<section class="py-16 bg-primary text-tertiary-2">
 			<div class="container mx-auto px-4 text-center">
 				<h2 class="text-3xl md:text-4xl font-bold mb-8">Notre Vision</h2>
@@ -729,7 +721,6 @@
 			</div>
 		</section>
 
-		<!-- Section CTA -->
 		<section
 			class="py-16 bg-gradient-to-r from-primary to-secondary text-tertiary-2"
 		>

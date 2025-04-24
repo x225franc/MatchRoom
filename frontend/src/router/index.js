@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home.vue';
 import Choice from '@/views/Choice.vue';
 import Swipe from '@/views/Swipe.vue';
+import Params from '@/views/Params.vue';
 import Signin from '@/views/User/Signin.vue';
 import Signout from '@/views/User/Signout.vue';
 import Signup from '@/views/User/Signup.vue';
@@ -14,6 +15,7 @@ const routes = [
     { path : '/signout', name: 'Signout', component: Signout, meta: { title: 'Déconnexion - MatchRoom', showHeaderFooter: false } },
     { path : '/signup', name: 'Signup', component: Signup, meta: { title: 'Inscription - MatchRoom', showHeaderFooter: false } },
     { path : '/swipe/:city', name: 'Swipe', component: Swipe, props: true, meta: { title: 'MatchRoom - :city', showHeaderFooter: true } },
+    { path : '/params/:city', name: 'Params', component: Params, props: true, meta: { title: 'MatchRoom - Parameters', showHeaderFooter: true } },
 
 
     { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { title: 'Dashboard', showHeaderFooter: false } },

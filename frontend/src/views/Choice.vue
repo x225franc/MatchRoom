@@ -7,7 +7,7 @@
 		<router-link
 		  v-for="(city, index) in cities"
 		  :key="index"
-		  :to="{ name: 'Swipe', params: { city: city.name } }"
+		  :to="{ name: 'Params', params: { city: city.name } }"
 		  class="relative rounded overflow-hidden shadow-lg block group"
 		>
 		  <img
@@ -44,7 +44,6 @@
   </script>
   
   <style scoped>
-  /* Ajout d'un effet hover pour le lien */
   .router-link-exact-active {
 	cursor: pointer;
   }
