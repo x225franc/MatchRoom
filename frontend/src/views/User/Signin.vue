@@ -25,7 +25,7 @@
 							id="email"
 							v-model="email"
 							placeholder="Entrer votre email"
-							class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+							class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
 							required
 						/>
 					</div>
@@ -41,7 +41,7 @@
 							id="password"
 							v-model="password"
 							placeholder="Entrer votre mot de passe"
-							class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+							class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
 							required
 						/>
 					</div>
@@ -55,7 +55,7 @@
 					<div>
 						<button
 							type="submit"
-							class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+							class="w-full bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
 							:disabled="isLoading"
 						>
 							{{ isLoading ? "Connexion..." : "Se connecter" }}
@@ -76,7 +76,7 @@
 							type="text"
 							id="token"
 							v-model="twoFactorToken"
-							class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+							class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
 							maxlength="6"
 							inputmode="numeric"
 							pattern="[0-9]*"
@@ -91,7 +91,7 @@
 					<div>
 						<button
 							type="submit"
-							class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+							class="w-full bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
 							:disabled="isLoading"
 						>
 							{{ isLoading ? "Vérification..." : "Vérifier" }}

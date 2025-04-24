@@ -69,7 +69,5 @@
 	import RoomTypes from "@/components/RoomTypes.vue";
 	import Forecast from "@/components/Forecast.vue";
 
-	import DarkModeToggle from "@/components/DarkModeToggle.vue";
-
 	defineProps(["isDark", "toggleDarkMode"]);
 </script>
