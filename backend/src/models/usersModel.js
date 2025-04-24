@@ -17,6 +17,17 @@ const User = {
 		return rows[0];
 	},
 
+  updatePassword: async (id, password) => {
+    const query = ` 
+      UPDATE users
+      SET password = $1
+      WHERE id = $2
+      RETURNING id, email, name, adress, compAdress, postCode, city
+    `;
+    const { rows } = await pool.query(query, [password, id]);
+    return rows[0];
+  },
+
 	updateInfoUser: async (user) => {
 		const { id, ...fields } = user;
 		const allowedFields = [
