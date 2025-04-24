@@ -1,16 +1,14 @@
 <template>
 	<div class="landing-page">
 		<!-- En-tête/Hero Section -->
-		<header
-			class="bg-gradient-to-r from-primary-dark to-primary text-tertiary-2"
-		>
+		<section class="bg-gradient-to-r from-primary to-secondary text-tertiary-2">
 			<div class="container mx-auto px-4 py-16 md:py-24">
 				<div class="flex flex-col md:flex-row items-center justify-between">
 					<div class="md:w-1/2 mb-8 md:mb-0">
 						<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
 							La Nouvelle Façon de Réserver Votre Hôtel Idéal
 						</h1>
-						<p class="text-xl md:text-2xl mb-8 text-tertiary-2-light">
+						<p class="text-xl md:text-2xl mb-8 text-tertiary-2">
 							Découvrez MatchRoom - La plateforme qui révolutionne la
 							réservation hôtelière en connectant vos besoins spécifiques avec
 							l'hébergement parfait.
@@ -28,18 +26,19 @@
 							</button>
 						</div>
 					</div>
-					<div class="md:w-2/5">
+					<div class="md:w-2/5 w-full">
 						<div
-							class="w-full h-64 bg-tertiary-2-dark flex items-center justify-center rounded-lg"
+							class="w-full h-48 sm:h-64 md:h-80 lg:h-96 bg-tertiary flex items-center justify-center rounded-lg"
 						>
-							<span class="text-tertiary text-xl font-semibold"
+							<span
+								class="text-tertiary-2 text-lg sm:text-xl md:text-2xl font-semibold text-center"
 								>Image à venir</span
 							>
 						</div>
 					</div>
 				</div>
 			</div>
-		</header>
+		</section>
 
 		<!-- Section Problématique -->
 		<section class="py-16 bg-tertiary-2">
@@ -58,7 +57,7 @@
 						<ul class="space-y-3">
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-secondary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -74,7 +73,7 @@
 							</li>
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-secondary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -90,7 +89,7 @@
 							</li>
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-secondary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -106,7 +105,7 @@
 							</li>
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-secondary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -124,13 +123,13 @@
 					</div>
 
 					<div class="bg-white p-8 rounded-lg shadow-md">
-						<h3 class="text-2xl font-semibold mb-4 text-secondary-dark">
+						<h3 class="text-2xl font-semibold mb-4 text-secondary">
 							Pour les hôteliers
 						</h3>
 						<ul class="space-y-3">
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-primary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -146,7 +145,7 @@
 							</li>
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-primary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -163,7 +162,7 @@
 							</li>
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-primary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -179,7 +178,7 @@
 							</li>
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-primary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -202,29 +201,27 @@
 		<!-- Section Solution -->
 		<section class="py-16 bg-white">
 			<div class="container mx-auto px-4">
-				<h2
-					class="text-3xl md:text-4xl font-bold text-center mb-12 text-tertiary"
-				>
+				<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
 					Notre Solution : L'Intelligence du Matching
 				</h2>
 
 				<div class="flex flex-col md:flex-row items-center">
-					<div class="md:w-1/2 mb-8 md:mb-0">
+					<div class="w-full md:w-1/2 mb-8 md:mb-0">
 						<div
-							class="w-full h-64 bg-tertiary-2 flex items-center justify-center rounded-lg"
+							class="w-full h-48 sm:h-64 md:h-64 lg:h-80 bg-tertiary flex items-center justify-center rounded-lg"
 						>
-							<span class="text-tertiary-light text-xl font-semibold"
-								>Processus de matching</span
-							>
+							<span class="text-tertiary-2 text-xl font-semibold text-center">
+								Processus de matching
+							</span>
 						</div>
 					</div>
 
-					<div class="md:w-1/2 md:pl-12">
+					<div class="w-full md:w-1/2 md:pl-12">
 						<ul class="space-y-4">
 							<li class="flex items-start">
 								<div class="bg-primary-light rounded-full p-2 mr-4">
 									<svg
-										class="h-6 w-6 text-tertiary-2"
+										class="h-6 w-6 text-primary"
 										fill="none"
 										viewBox="0 0 24 24"
 										stroke="currentColor"
@@ -238,10 +235,10 @@
 									</svg>
 								</div>
 								<div>
-									<h3 class="font-semibold text-lg text-tertiary">
+									<h3 class="font-semibold text-lg">
 										Algorithme de matching unique
 									</h3>
-									<p class="text-tertiary-light">
+									<p class="text-tertiary">
 										Qui associe clients et hôtels selon des critères précis
 									</p>
 								</div>
@@ -250,7 +247,7 @@
 							<li class="flex items-start">
 								<div class="bg-primary-light rounded-full p-2 mr-4">
 									<svg
-										class="h-6 w-6 text-tertiary-2"
+										class="h-6 w-6 text-primary"
 										fill="none"
 										viewBox="0 0 24 24"
 										stroke="currentColor"
@@ -264,10 +261,10 @@
 									</svg>
 								</div>
 								<div>
-									<h3 class="font-semibold text-lg text-tertiary">
+									<h3 class="font-semibold text-lg">
 										Valorisation de l'unicité
 									</h3>
-									<p class="text-tertiary-light">
+									<p class="text-tertiary">
 										Une plateforme qui met en avant les spécificités de chaque
 										établissement
 									</p>
@@ -277,7 +274,7 @@
 							<li class="flex items-start">
 								<div class="bg-primary-light rounded-full p-2 mr-4">
 									<svg
-										class="h-6 w-6 text-tertiary-2"
+										class="h-6 w-6 text-primary"
 										fill="none"
 										viewBox="0 0 24 24"
 										stroke="currentColor"
@@ -291,10 +288,10 @@
 									</svg>
 								</div>
 								<div>
-									<h3 class="font-semibold text-lg text-tertiary">
+									<h3 class="font-semibold text-lg">
 										Expérience personnalisée
 									</h3>
-									<p class="text-tertiary-light">
+									<p class="text-tertiary">
 										Adaptée aux besoins spécifiques de chaque voyageur
 									</p>
 								</div>
@@ -306,11 +303,10 @@
 		</section>
 
 		<!-- Section Fonctionnement -->
-		<section class="py-16 bg-tertiary-2">
+
+		<section class="py-16 bg-primary-light">
 			<div class="container mx-auto px-4">
-				<h2
-					class="text-3xl md:text-4xl font-bold text-center mb-12 text-tertiary"
-				>
+				<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
 					Comment Ça Fonctionne ?
 				</h2>
 
@@ -323,16 +319,14 @@
 							<div class="flex">
 								<div class="flex-shrink-0">
 									<div
-										class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-tertiary-2 text-xl font-bold"
+										class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white text-xl font-bold"
 									>
 										1
 									</div>
 								</div>
 								<div class="ml-4">
-									<h4 class="text-lg font-medium text-tertiary">
-										Créez votre profil
-									</h4>
-									<p class="mt-1 text-tertiary-light">
+									<h4 class="text-lg font-medium">Créez votre profil</h4>
+									<p class="mt-1 text-tertiary">
 										Partagez vos préférences, style de voyage et priorités
 									</p>
 								</div>
@@ -341,16 +335,14 @@
 							<div class="flex">
 								<div class="flex-shrink-0">
 									<div
-										class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-tertiary-2 text-xl font-bold"
+										class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white text-xl font-bold"
 									>
 										2
 									</div>
 								</div>
 								<div class="ml-4">
-									<h4 class="text-lg font-medium text-tertiary">
-										Exprimez vos besoins
-									</h4>
-									<p class="mt-1 text-tertiary-light">
+									<h4 class="text-lg font-medium">Exprimez vos besoins</h4>
+									<p class="mt-1 text-tertiary">
 										Pour chaque voyage, précisez vos attentes spécifiques
 									</p>
 								</div>
@@ -359,16 +351,14 @@
 							<div class="flex">
 								<div class="flex-shrink-0">
 									<div
-										class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-tertiary-2 text-xl font-bold"
+										class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white text-xl font-bold"
 									>
 										3
 									</div>
 								</div>
 								<div class="ml-4">
-									<h4 class="text-lg font-medium text-tertiary">
-										Découvrez vos matches
-									</h4>
-									<p class="mt-1 text-tertiary-light">
+									<h4 class="text-lg font-medium">Découvrez vos matches</h4>
+									<p class="mt-1 text-tertiary">
 										Notre algorithme vous présente les établissements parfaits
 										pour vous
 									</p>
@@ -378,16 +368,16 @@
 							<div class="flex">
 								<div class="flex-shrink-0">
 									<div
-										class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-tertiary-2 text-xl font-bold"
+										class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white text-xl font-bold"
 									>
 										4
 									</div>
 								</div>
 								<div class="ml-4">
-									<h4 class="text-lg font-medium text-tertiary">
+									<h4 class="text-lg font-medium">
 										Réservez en toute confiance
 									</h4>
-									<p class="mt-1 text-tertiary-light">
+									<p class="mt-1 text-tertiary">
 										Avec l'assurance d'une expérience alignée avec vos attentes
 									</p>
 								</div>
@@ -396,23 +386,23 @@
 					</div>
 
 					<div>
-						<h3 class="text-2xl font-semibold mb-6 text-secondary-dark">
+						<h3 class="text-2xl font-semibold mb-6 text-secondary">
 							Pour les Hôteliers
 						</h3>
 						<div class="space-y-8">
 							<div class="flex">
 								<div class="flex-shrink-0">
 									<div
-										class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-tertiary text-xl font-bold"
+										class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white text-xl font-bold"
 									>
 										1
 									</div>
 								</div>
 								<div class="ml-4">
-									<h4 class="text-lg font-medium text-tertiary">
+									<h4 class="text-lg font-medium">
 										Mettez en avant votre unicité
 									</h4>
-									<p class="mt-1 text-tertiary-light">
+									<p class="mt-1 text-tertiary">
 										Présentez les caractéristiques qui rendent votre
 										établissement spécial
 									</p>
@@ -422,16 +412,16 @@
 							<div class="flex">
 								<div class="flex-shrink-0">
 									<div
-										class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-tertiary text-xl font-bold"
+										class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white text-xl font-bold"
 									>
 										2
 									</div>
 								</div>
 								<div class="ml-4">
-									<h4 class="text-lg font-medium text-tertiary">
+									<h4 class="text-lg font-medium">
 										Définissez votre clientèle idéale
 									</h4>
-									<p class="mt-1 text-tertiary-light">
+									<p class="mt-1 text-tertiary">
 										Identifiez les voyageurs qui apprécieront le plus votre
 										offre
 									</p>
@@ -441,16 +431,16 @@
 							<div class="flex">
 								<div class="flex-shrink-0">
 									<div
-										class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-tertiary text-xl font-bold"
+										class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white text-xl font-bold"
 									>
 										3
 									</div>
 								</div>
 								<div class="ml-4">
-									<h4 class="text-lg font-medium text-tertiary">
+									<h4 class="text-lg font-medium">
 										Attirez des clients satisfaits
 									</h4>
-									<p class="mt-1 text-tertiary-light">
+									<p class="mt-1 text-tertiary">
 										Accueillez des voyageurs qui recherchent précisément ce que
 										vous offrez
 									</p>
@@ -460,16 +450,16 @@
 							<div class="flex">
 								<div class="flex-shrink-0">
 									<div
-										class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-tertiary text-xl font-bold"
+										class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white text-xl font-bold"
 									>
 										4
 									</div>
 								</div>
 								<div class="ml-4">
-									<h4 class="text-lg font-medium text-tertiary">
+									<h4 class="text-lg font-medium">
 										Construisez votre réputation
 									</h4>
-									<p class="mt-1 text-tertiary-light">
+									<p class="mt-1 text-tertiary">
 										Développez votre notoriété auprès de votre public cible
 									</p>
 								</div>
@@ -483,14 +473,12 @@
 		<!-- Section Avantages -->
 		<section class="py-16 bg-white">
 			<div class="container mx-auto px-4">
-				<h2
-					class="text-3xl md:text-4xl font-bold text-center mb-12 text-tertiary"
-				>
+				<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
 					Les Avantages de Matcher
 				</h2>
 
 				<div class="grid md:grid-cols-2 gap-8">
-					<div class="bg-tertiary-2 p-8 rounded-lg">
+					<div class="bg-primary-light p-8 rounded-lg">
 						<h3 class="text-2xl font-semibold mb-6 text-primary">
 							Pour les Voyageurs
 						</h3>
@@ -578,14 +566,14 @@
 						</ul>
 					</div>
 
-					<div class="bg-tertiary-2-dark p-8 rounded-lg">
-						<h3 class="text-2xl font-semibold mb-6 text-secondary-dark">
+					<div class="bg-secondary-light p-8 rounded-lg">
+						<h3 class="text-2xl font-semibold mb-6 text-secondary">
 							Pour les Hôteliers
 						</h3>
 						<ul class="space-y-4">
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-secondary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -604,7 +592,7 @@
 							</li>
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-secondary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -623,7 +611,7 @@
 							</li>
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-secondary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -643,7 +631,7 @@
 							</li>
 							<li class="flex items-start">
 								<svg
-									class="h-6 w-6 text-secondary-dark mr-2"
+									class="h-6 w-6 text-secondary mr-2"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -662,6 +650,115 @@
 							</li>
 						</ul>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section Témoignages -->
+		<section class="py-16 bg-tertiary-2">
+			<div class="container mx-auto px-4">
+				<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+					Ils Ont Trouvé Leur Match Parfait
+				</h2>
+
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="bg-white p-8 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<div
+								class="h-12 w-12 rounded-full bg-tertiary mr-4 flex items-center justify-center"
+							>
+								<span class="text-tertiary-2 font-bold text-lg">SM</span>
+							</div>
+
+							<div>
+								<h4 class="font-semibold">Sophie M.</h4>
+								<p class="text-tertiary text-sm">Consultante</p>
+							</div>
+						</div>
+						<p class="text-tertiary italic">
+							"Grâce à Matcher, j'ai découvert un hôtel-boutique qui
+							correspondait exactement à mes attentes pour mon voyage d'affaires
+							à Lyon. Une expérience sur mesure que je n'aurais jamais trouvée
+							sur les plateformes traditionnelles."
+						</p>
+					</div>
+
+					<div class="bg-white p-8 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<div
+								class="h-12 w-12 rounded-full bg-tertiary mr-4 flex items-center justify-center"
+							>
+								<span class="text-tertiary-2 font-bold text-lg">JD</span>
+							</div>
+
+							<div>
+								<h4 class="font-semibold">Jean D.</h4>
+								<p class="text-tertiary text-sm">
+									Propriétaire de l'Hôtel Le Charme
+								</p>
+							</div>
+						</div>
+						<p class="text-tertiary italic">
+							"En tant que petit hôtel indépendant, nous avions du mal à nous
+							démarquer. Matcher nous a permis d'attirer une clientèle qui
+							apprécie réellement notre philosophie et nos services. Notre taux
+							de satisfaction client a explosé!"
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section Vision -->
+		<section class="py-16 bg-primary text-tertiary-2">
+			<div class="container mx-auto px-4 text-center">
+				<h2 class="text-3xl md:text-4xl font-bold mb-8">Notre Vision</h2>
+
+				<p class="text-xl max-w-3xl mx-auto">
+					Matcher aspire à transformer l'industrie hôtelière en créant un
+					écosystème où chaque voyageur trouve l'hébergement parfaitement adapté
+					à ses besoins, et où chaque établissement accueille les clients qui
+					apprécieront véritablement son offre.
+				</p>
+
+				<p class="text-xl max-w-3xl mx-auto mt-6">
+					Nous croyons en un avenir où la réservation hôtelière n'est plus une
+					loterie, mais une science précise basée sur la compatibilité réelle
+					entre l'offre et la demande.
+				</p>
+			</div>
+		</section>
+
+		<!-- Section CTA -->
+		<section
+			class="py-16 bg-gradient-to-r from-primary to-secondary text-tertiary-2"
+		>
+			<div class="container mx-auto px-4 text-center">
+				<h2 class="text-3xl md:text-4xl font-bold mb-8">
+					Rejoignez la Révolution Matcher Dès Aujourd'hui
+				</h2>
+
+				<p class="text-xl max-w-3xl mx-auto mb-12">
+					Transformez votre façon de voyager ou d'accueillir. Faites partie de
+					l'avenir de l'hôtellerie.
+				</p>
+
+				<div
+					class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8"
+				>
+					<router-link
+						to="/signup?type=traveler"
+						class="bg-tertiary-2 text-primary hover:bg-tertiary-2-dark px-8 py-4 rounded-lg font-bold text-lg transition duration-300 shadow-lg transform hover:-translate-y-1"
+					>
+						MATCHER !
+					</router-link>
+
+					<router-link
+						to="/signup?type=hotelier"
+						class="bg-transparent border-2 border-tertiary-2 hover:bg-tertiary-2 hover:text-primary px-8 py-4 rounded-lg font-bold text-lg transition duration-300 shadow-lg transform hover:-translate-y-1"
+					>
+						DEVENIR HÔTELIER
+					</router-link>
 				</div>
 			</div>
 		</section>
