@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full h-screen flex items-center justify-center dark:bg-neutral-800 p-6"
+    class="relative w-full h-[90vh] flex items-center justify-center dark:bg-neutral-800 p-6"
   >
     <div
       class="absolute w-full top-0 h-[10vh] -z-10 bg-gradient-to-b from-[#c6c6c6] to-[#ffffff] dark:from-[#4f4f4f] dark:to-[#000000]"
