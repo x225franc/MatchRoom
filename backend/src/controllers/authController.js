@@ -109,6 +109,32 @@ const verify2FA = async (req, res) => {
 //   }
 // };
 
+
+// const verify2FA = async (req, res) => {
+//   const { userId, token } = req.body;
+//   try {
+//     const user = await User.findById(userId);
+//     if (!user || !user.two_factor_enabled) {
+//       return res.status(400).json({ message: "2FA non configuré" });
+//     }
+
+//     const verified = verify2FAToken(user.two_factor_secret, token);
+//     if (!verified) {
+//       return res.status(401).json({ message: "Code 2FA invalide" });
+//     }
+
+//     const jwtToken = generateJWT(user.id, user.roles);
+//     const expiresAt = new Date(Date.now() + 3600000);
+//     await User.updateSession(user.id, jwtToken, expiresAt);
+//     res.json({ token: jwtToken, roles: user.roles });
+//   } catch (err) {
+//     res.status(500).json({
+//       message: "Erreur lors de la vérification 2FA",
+//       error: err.message,
+//     });
+//   }
+// };
+
 const logout = async (req, res) => {
 	try {
 		await User.clearSession(req.userId);
