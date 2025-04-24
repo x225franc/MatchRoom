@@ -238,7 +238,9 @@
 	function logout() {
 		localStorage.removeItem("authToken");
 		user.value = null;
-		window.location.reload();
+    router.push("/").then(() => {
+      window.location.reload();
+    });
 	}
 </script>
 

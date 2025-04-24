@@ -51,66 +51,10 @@ const login = async (req, res) => {
 			return res.json({ requires2FA: true, userId: user.id });
 		}
 
-<<<<<<< HEAD
-    const token = generateJWT(user.id, user.role);
-    const expiresAt = new Date(Date.now() + 3600000); // 1h
-    await User.updateSession(user.id, token, expiresAt);
-    res.json({ token, role: user.role });
-  } catch (err) {
-    res
-      .status(500)
-      .json({ message: "Erreur lors de la connexion", error: err.message });
-  }
-};
-
-const setup2FA = async (req, res) => {
-  try {
-    const user = await User.findById(req.userId);
-    if (user.two_factor_enabled) {
-      return res.status(400).json({ message: "2FA déjà configuré" });
-    }
-
-    const secret = speakeasy.generateSecret({
-      name: `TinderHotels:${user.email}`,
-    });
-    await User.update2FASecret(user.id, secret.base32);
-    res.json({ qrCode: secret.otpauth_url });
-  } catch (err) {
-    res.status(500).json({
-      message: "Erreur lors de la configuration 2FA",
-      error: err.message,
-    });
-  }
-};
-
-const verify2FA = async (req, res) => {
-  const { userId, token } = req.body;
-  try {
-    const user = await User.findById(userId);
-    if (!user || !user.two_factor_enabled) {
-      return res.status(400).json({ message: "2FA non configuré" });
-    }
-
-    const verified = verify2FAToken(user.two_factor_secret, token);
-    if (!verified) {
-      return res.status(401).json({ message: "Code 2FA invalide" });
-    }
-
-    const jwtToken = generateJWT(user.id, user.role);
-    const expiresAt = new Date(Date.now() + 3600000);
-    await User.updateSession(user.id, jwtToken, expiresAt);
-    res.json({ token: jwtToken, role: user.role });
-  } catch (err) {
-    res.status(500).json({
-      message: "Erreur lors de la vérification 2FA",
-      error: err.message,
-    });
-  }
-=======
-		const token = generateJWT(user.id);
+		const token = generateJWT(user.id, user.role);
 		const expiresAt = new Date(Date.now() + 3600000); // 1h
 		await User.updateSession(user.id, token, expiresAt);
-		res.json({ token, roles: user.roles });
+		res.json({ token, role: user.role });
 	} catch (err) {
 		res
 			.status(500)
@@ -151,17 +95,16 @@ const verify2FA = async (req, res) => {
 			return res.status(401).json({ message: "Code 2FA invalide" });
 		}
 
-		const jwtToken = generateJWT(user.id, user.roles);
+		const jwtToken = generateJWT(user.id, user.role);
 		const expiresAt = new Date(Date.now() + 3600000);
 		await User.updateSession(user.id, jwtToken, expiresAt);
-		res.json({ token: jwtToken, roles: user.roles });
+		res.json({ token: jwtToken, role: user.role });
 	} catch (err) {
 		res.status(500).json({
 			message: "Erreur lors de la vérification 2FA",
 			error: err.message,
 		});
 	}
->>>>>>> 7515150433355c644f1fa76cc3048e61cfaa331b
 };
 
 const logout = async (req, res) => {
@@ -175,8 +118,4 @@ const logout = async (req, res) => {
 	}
 };
 
-<<<<<<< HEAD
-export { register, login, setup2FA, verify2FA,  logout };
-=======
 export { register, login, setup2FA, verify2FA, logout };
->>>>>>> 7515150433355c644f1fa76cc3048e61cfaa331b
