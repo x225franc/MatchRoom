@@ -21,7 +21,7 @@ const loginLimiter = rateLimit({
 });
 
 router.post("/register", register);
-router.post("/login", loginLimiter, login);
+router.post("/login", login);
 router.post("/2fa/setup", authMiddleware, setup2FA);
 router.post("/2fa/verify", verify2FA);
 router.post("/logout", authMiddleware, logout);
