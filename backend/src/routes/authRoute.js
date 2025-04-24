@@ -4,8 +4,8 @@ import authMiddleware from "../middleware/authMiddleware.js";
 import {
 	register,
 	login,
-	// setup2FA,
-	// verify2FA,
+	setup2FA,
+	verify2FA,
 	logout,
 } from "../controllers/authController.js";
 import dotenv from 'dotenv';
@@ -23,7 +23,7 @@ const loginLimiter = rateLimit({
 
 router.post("/register", register);
 router.post("/login", login);
-// router.post('/2fa/setup', authMiddleware, setup2FA);
-// router.post('/2fa/verify', verify2FA);
+router.post('/2fa/setup', authMiddleware, setup2FA);
+router.post('/2fa/verify', verify2FA);
 router.post("/logout", authMiddleware, logout);
 export default router; // Add this line

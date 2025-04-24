@@ -21,7 +21,7 @@ router.post(
   checkRole(["admin", "hotel"]),
   createRoom
 );
-router.get("/get/:id", authMiddleware, getRoomById);
+router.get("/get/:id", authMiddleware, checkRole("hotel"), getRoomById);
 router.get(
   "/get/user/:userId",
   authMiddleware,

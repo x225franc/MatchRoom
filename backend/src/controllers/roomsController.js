@@ -3,8 +3,16 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const createRoom = async (req, res) => {
-  const { userId, start_date, end_date, status, quantity, photos, price } =
-    req.body;
+  const {
+    userId,
+    start_date,
+    end_date,
+    status,
+    quantity,
+    photos,
+    price,
+    capacity,
+  } = req.body;
 
   if (
     !userId ||
@@ -13,7 +21,8 @@ const createRoom = async (req, res) => {
     !status ||
     !quantity ||
     !photos ||
-    !price
+    !price ||
+    !capacity
   ) {
     return res.status(400).json({ message: "Tous les champs sont requis" });
   }
@@ -27,6 +36,7 @@ const createRoom = async (req, res) => {
       quantity,
       photos,
       price,
+      capacity,
     });
     res.status(201).json({ message: "Chambre créée", room });
   } catch (err) {

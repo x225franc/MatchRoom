@@ -3,7 +3,7 @@ import speakeasy from 'speakeasy';
 import dotenv from 'dotenv';
 dotenv.config();
 const generateJWT = (userId, roles) => {
-  return jwt.sign({ id: userId, roles }, process.env.JWT_SECRET, { expiresIn: '1h' });
+  return jwt.sign({ id: userId, role: roles }, process.env.JWT_SECRET, { expiresIn: '1h' });
 };
 
 // const verify2FA = (secret, token) => {
