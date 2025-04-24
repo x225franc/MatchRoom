@@ -7,9 +7,18 @@
 		<p class="text-muted mb-4">
 			Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
 		</p>
-		<router-link to="/" class="btn btn-primary btn-lg px-4"> Retour à l'accueil </router-link>
+		<router-link to="/" class="btn btn-primary btn-lg px-4">
+			Retour à l'accueil
+		</router-link>
 		<div>
-				<div class="text-4xl font-bold">MatchRoom</div>
+			<!-- <img
+				src="@/assets/logo.png"
+				alt="omnimat"
+				class="img-fluid"
+				style="max-width: 240px"
+			/> -->
+			<div class="text-4xl font-bold">MatchRoom</div>
+		</div>
 	</div>
 </template>
 
