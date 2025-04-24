@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-[#BAA089] dark:bg-[#1C1C1C] text-white px-6 pt-10 pb-4 transition-colors duration-300">
+  <footer class="bg-gradient-to-b from-[#BAA089] to-[#E8CEB7] text-white px-6 pt-10 pb-4 transition-colors duration-300">
     <div class="flex flex-col md:flex-row md:justify-between gap-8">
       <div>
         <h2 class="text-2xl font-bold mb-4">Matchroom</h2>
@@ -82,7 +82,7 @@
           <input
             type="email"
             placeholder="Email"
-            class="pl-8 pr-4 py-2 rounded-lg w-full text-black placeholder-gray-500 dark:bg-white dark:text-black"
+            class="pl-8 pr-4 py-2 rounded-lg w-full text-black placeholder-gray-500"
           />
           <span class="absolute left-2 top-2.5 text-gray-500"
             ><svg
