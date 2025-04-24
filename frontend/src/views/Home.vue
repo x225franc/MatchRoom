@@ -760,7 +760,10 @@
 	export default {
 		name: "HomePage",
 		created() {
-			// On pourrait ajouter ici des traqueurs d'événements ou d'autres logiques d'initialisation
+			const token = localStorage.getItem("authToken");
+			if (token) {
+				this.$router.push("/choice");
+			}
 		},
 		methods: {
 			// Méthodes pour gérer les interactions utilisateur si nécessaire

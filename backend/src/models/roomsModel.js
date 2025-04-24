@@ -21,10 +21,11 @@ const Room = {
     quantity,
     photos,
     price,
+    capacity,
   }) => {
     const query = `
-        INSERT INTO rooms (user_id, start_date, end_date, status, quantity, photos, price)
-        VALUES ($1, $2, $3, $4, $5, $6, $7)
+        INSERT INTO rooms (user_id, start_date, end_date, status, quantity, photos, price, capacity)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
         RETURNING *
         `;
     const { rows } = await pool.query(query, [
@@ -35,6 +36,7 @@ const Room = {
       quantity,
       photos,
       price,
+      capacity,
     ]);
     return rows[0];
   },
@@ -85,6 +87,7 @@ const Room = {
       "quantity",
       "photos",
       "price",
+      "capacity",
     ];
     const keys = Object.keys(fields).filter(
       (key) =>

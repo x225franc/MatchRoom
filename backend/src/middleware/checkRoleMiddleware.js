@@ -14,7 +14,7 @@ const checkRole = (allowedRoles) => {
         .json({ message: "Erreur de configuration du serveur" });
     }
 
-    const userRole = req.user.role;
+    const userRole = req.user.role; 
 
     if (allowedRoles.includes(userRole)) {
       next(); // Vai trò hợp lệ, cho phép tiếp tục

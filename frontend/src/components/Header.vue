@@ -122,22 +122,68 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import DarkModeToggle from "@/components/DarkModeToggle.vue";
+	import { ref, computed, onMounted } from "vue";
+	import { useRouter } from "vue-router";
 
-const props = defineProps({
-  isDark: Boolean,
-  toggleDarkMode: Function
-})
+	const props = defineProps({
+		isDark: Boolean,
+		toggleDarkMode: Function,
+	});
 
-const showMenu = ref(false)
+	const showMenu = ref(false);
+	const user = ref(null);
+	const router = useRouter();
+
+	// Fonction pour décoder le JWT
+	function parseJwt(token) {
+		if (!token) return null;
+		try {
+			const base64Url = token.split(".")[1];
+			const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+			const jsonPayload = decodeURIComponent(
+				atob(base64)
+					.split("")
+					.map(function (c) {
+						return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+					})
+					.join("")
+			);
+			return JSON.parse(jsonPayload);
+		} catch (e) {
+			return null;
+		}
+	}
+
+	onMounted(() => {
+		const token = localStorage.getItem("authToken");
+		if (token) {
+			const payload = parseJwt(token);
+			user.value = {
+				id: payload?.id,
+				email: payload?.email,
+				role: payload?.role,
+			};
+		}
+	});
+
+	const isAuthenticated = computed(() => !!localStorage.getItem("authToken"));
+
+	function logout() {
+		localStorage.removeItem("authToken");
+		user.value = null;
+    router.push("/").then(() => {
+      window.location.reload();
+    });
+	}
 </script>
 
 <style>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .2s;
-}
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
+	.fade-enter-active,
+	.fade-leave-active {
+		transition: opacity 0.2s;
+	}
+	.fade-enter-from,
+	.fade-leave-to {
+		opacity: 0;
+	}
 </style>
