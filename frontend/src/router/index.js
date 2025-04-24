@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue';
 import Signin from '@/views/User/Signin.vue';
 import Signout from '@/views/User/Signout.vue';
 import Signup from '@/views/User/Signup.vue';
+import Dashboard from '@/views/Dashboard.vue';
 
 // parametrage des routes
 const routes = [
@@ -12,6 +13,7 @@ const routes = [
     { path : '/signup', name: 'Signup', component: Signup, meta: { title: 'Inscription - MatchRoom', showHeaderFooter: false } },
 
 
+    { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { title: 'Dashboard', showHeaderFooter: false } },
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('@/views/Notfound.vue'), meta: { title: '404 - Page non trouvée', showHeaderFooter: false } },
 ];
 
