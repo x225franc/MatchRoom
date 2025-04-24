@@ -70,7 +70,25 @@
 				</span>
 			</button>
 
-			<router-link to="/signin" class="hover:underline">Se connecter</router-link>
+			<!-- Affiche la photo si connecté, sinon le bouton -->
+			<template v-if="isAuthenticated">
+				<img
+					src="@/assets/logo.png"
+					alt="Profil"
+					class="w-9 h-9 rounded-full object-cover border-2 border-white shadow"
+				/>
+				<!-- Bouton Déconnexion -->
+				<button
+					@click="logout"
+				>
+					Se déconnecter
+				</button>
+			</template>
+			<template v-else>
+				<router-link to="/signin" class="hover:underline"
+					>Se connecter</router-link
+				>
+			</template>
 		</nav>
 
 		<!-- mobile quick actions: DarkMode + Se connecter -->
@@ -109,7 +127,23 @@
 					</svg>
 				</span>
 			</button>
-			<a href="#" class="hover:underline text-sm">Se connecter</a>
+			<template v-if="isAuthenticated">
+				<img
+					src="@/assets/logo.png"
+					alt="Profil"
+					class="w-8 h-8 rounded-full object-cover border-2 border-white shadow"
+				/>
+				<button
+					@click="logout"
+				>
+					Se déconnecter
+				</button>
+			</template>
+			<template v-else>
+				<router-link to="/signin" class="hover:underline text-sm"
+					>Se connecter</router-link
+				>
+			</template>
 		</div>
 
 		<!-- mobile slide-out menu with overlay -->
@@ -155,8 +189,8 @@
 </template>
 
 <script setup>
-	import { ref } from "vue";
-	import DarkmodeToggle from "@/components/DarkmodeToggle.vue";
+	import { ref, computed, onMounted } from "vue";
+	import { useRouter } from "vue-router";
 
 	const props = defineProps({
 		isDark: Boolean,
@@ -164,6 +198,48 @@
 	});
 
 	const showMenu = ref(false);
+	const user = ref(null);
+	const router = useRouter();
+
+	// Fonction pour décoder le JWT
+	function parseJwt(token) {
+		if (!token) return null;
+		try {
+			const base64Url = token.split(".")[1];
+			const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+			const jsonPayload = decodeURIComponent(
+				atob(base64)
+					.split("")
+					.map(function (c) {
+						return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+					})
+					.join("")
+			);
+			return JSON.parse(jsonPayload);
+		} catch (e) {
+			return null;
+		}
+	}
+
+	onMounted(() => {
+		const token = localStorage.getItem("authToken");
+		if (token) {
+			const payload = parseJwt(token);
+			user.value = {
+				id: payload?.id,
+				email: payload?.email,
+				role: payload?.role,
+			};
+		}
+	});
+
+	const isAuthenticated = computed(() => !!localStorage.getItem("authToken"));
+
+	function logout() {
+		localStorage.removeItem("authToken");
+		user.value = null;
+		window.location.reload();
+	}
 </script>
 
 <style>
