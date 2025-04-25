@@ -244,7 +244,6 @@ onMounted(async () => {
 });
 
 function startDrag(idx, e) {
-  // Ne pas démarrer le drag si c'est un clic sur un bouton
   if (e.target.closest("button")) return;
   draggingIdx = idx;
   startX = e.clientX;

@@ -13,7 +13,7 @@
                 d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
-     <img src="/logo.png"  alt="Matchroom" class="hidden md:block ml-5 mt-1 w-20" />
+     <img src="/logo.png" alt="Matchroom" class="hidden md:block ml-5 mt-1 w-20  duration-200 hover:scale-105 cursor-pointer" @click="router.push('/')" />
   </div>
 
     <nav class="hidden md:flex items-center space-x-6 text-sm md:text-base">
