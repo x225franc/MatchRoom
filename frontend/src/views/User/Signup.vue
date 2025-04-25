@@ -327,48 +327,49 @@ export default {
         return false;
       }
 
-      if (!this.acceptTerms) {
-        this.errorMessage = "Vous devez accepter les conditions d'utilisation";
-        return false;
-      }
-      if (this.isHotelier) {
-        if (!this.form.siret.trim()) {
-          this.errorMessage =
-            "Le numéro SIRET est obligatoire pour les hôteliers";
-          return false;
-        }
-        if (!this.form.description.trim()) {
-          this.errorMessage = "La description de l'hôtel est obligatoire";
-          return false;
-        }
-      }
-      return true;
-    },
-    async handleRegister() {
-      this.errorMessage = "";
-      if (!this.validateForm()) {
-        return;
-      }
-      try {
-        this.isLoading = true;
-        const payload = {
-          ...this.form,
-          role: this.role,
-          status: this.isHotelier ? "pending" : "active",
-          tags:
-            this.isHotelier && this.form.tags
-              ? this.form.tags.split(",").map((t) => t.trim())
-              : undefined,
-        };
-        // Nettoyer les champs inutiles pour voyageur
-        if (!this.isHotelier) {
-          delete payload.description;
-          delete payload.siret;
-          delete payload.tags;
-          delete payload.rate;
-        }
-        // Nettoyer confirmPassword
-        delete payload.confirmPassword;
+				if (!this.acceptTerms) {
+					this.errorMessage =
+						"Vous devez accepter les conditions d'utilisation";
+					return false;
+				}
+				if (this.isHotelier) {
+					if (!this.form.siret.trim()) {
+						this.errorMessage =
+							"Le numéro SIRET est obligatoire pour les hôteliers";
+						return false;
+					}
+					if (!this.form.description.trim()) {
+						this.errorMessage = "La description de l'hôtel est obligatoire";
+						return false;
+					}
+				}
+				return true;
+			},
+			async handleRegister() {
+				this.errorMessage = "";
+				if (!this.validateForm()) {
+					return;
+				}
+				try {
+					this.isLoading = true;
+					const payload = {
+						...this.form,
+						role: this.role,
+						status: "active", // Définir le statut "active" pour tous les utilisateurs
+						tags:
+							this.isHotelier && this.form.tags
+								? this.form.tags.split(",").map((t) => t.trim())
+								: undefined,
+					};
+					// Nettoyer les champs inutiles pour voyageur
+					if (!this.isHotelier) {
+						delete payload.description;
+						delete payload.siret;
+						delete payload.tags;
+						delete payload.rate;
+					}
+					// Nettoyer confirmPassword
+					delete payload.confirmPassword;
 
         await axios.post(
           // `http://localhost:3001/auth/register`,
