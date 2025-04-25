@@ -9,7 +9,17 @@ import {
 } from "../utils/authUtils.js";
 
 const register = async (req, res) => {
-	const { email, password, name, role, status } = req.body;
+	const { 
+		email, 
+		password, 
+		name, 
+		role, 
+		status,
+		description, 
+		siret, 
+		tags, 
+		rate 
+	} = req.body;
 
 	if (!email || !password || !name) {
 		return res.status(400).json({ message: "Mettre ton email et password" });
@@ -25,9 +35,14 @@ const register = async (req, res) => {
 			email,
 			password: hashedPassword,
 			name,
-			role: role,
-			status: status,
+			role: role || "member",
+			status: status || "active",
+			description,
+			siret,
+			tags,
+			rate
 		};
+		
 		const user = await User.create(userData);
 		res
 			.status(201)

@@ -11,8 +11,8 @@
 				<p class="text-[#E8CEB7] text-sm tracking-widest mb-2">
 					La Nouvelle Façon de Réserver Votre Hôtel Idéal
 				</p>
-				<h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
-					MATCHROOM - LA PLATEFORME QUI RÉVOLUTIONNE LA RÉSERVATION HÔTELIÈRE.
+				<h1 class="text-4xl md:text-4xl font-bold leading-tight mb-4">
+					MatchRoom - Réservez Votre Hôtel Idéal
 				</h1>
 				<button
 					class="bg-gradient-to-b from-[#BAA089] to-[#E8CEB7] text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-400 transition"
@@ -24,163 +24,6 @@
 	</div>
 	<div class="landing-page">
 
-
-		<section class="py-16 bg-tertiary-2">
-			<div class="container mx-auto px-4">
-				<h2
-					class="text-3xl md:text-4xl font-bold text-center mb-12 text-tertiary"
-				>
-					Le Problème des Réservations Traditionnelles
-				</h2>
-
-				<div class="grid md:grid-cols-2 gap-8">
-					<div class="bg-white p-8 rounded-lg shadow-md">
-						<h3 class="text-2xl font-semibold mb-4 text-primary">
-							Pour les voyageurs
-						</h3>
-						<ul class="space-y-3">
-							<li class="flex items-start">
-								<svg
-									class="h-6 w-6 text-secondary mr-2"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M6 18L18 6M6 6l12 12"
-									/>
-								</svg>
-								Recherches imprécises et chronophages
-							</li>
-							<li class="flex items-start">
-								<svg
-									class="h-6 w-6 text-secondary mr-2"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M6 18L18 6M6 6l12 12"
-									/>
-								</svg>
-								Résultats ne correspondant pas à vos véritables besoins
-							</li>
-							<li class="flex items-start">
-								<svg
-									class="h-6 w-6 text-secondary mr-2"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M6 18L18 6M6 6l12 12"
-									/>
-								</svg>
-								Expérience client impersonnelle
-							</li>
-							<li class="flex items-start">
-								<svg
-									class="h-6 w-6 text-secondary mr-2"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M6 18L18 6M6 6l12 12"
-									/>
-								</svg>
-								Filtres génériques qui ne capturent pas vos priorités réelles
-							</li>
-						</ul>
-					</div>
-
-					<div class="bg-white p-8 rounded-lg shadow-md">
-						<h3 class="text-2xl font-semibold mb-4 text-secondary">
-							Pour les hôteliers
-						</h3>
-						<ul class="space-y-3">
-							<li class="flex items-start">
-								<svg
-									class="h-6 w-6 text-primary mr-2"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M6 18L18 6M6 6l12 12"
-									/>
-								</svg>
-								Difficulté à mettre en valeur leurs véritables atouts
-							</li>
-							<li class="flex items-start">
-								<svg
-									class="h-6 w-6 text-primary mr-2"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M6 18L18 6M6 6l12 12"
-									/>
-								</svg>
-								Peine à attirer la clientèle spécifique qui appréciera leur
-								établissement
-							</li>
-							<li class="flex items-start">
-								<svg
-									class="h-6 w-6 text-primary mr-2"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M6 18L18 6M6 6l12 12"
-									/>
-								</svg>
-								Difficulté à se différencier efficacement de la concurrence
-							</li>
-							<li class="flex items-start">
-								<svg
-									class="h-6 w-6 text-primary mr-2"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M6 18L18 6M6 6l12 12"
-									/>
-								</svg>
-								Communication marketing peu ciblée et coûteuse
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
 
 		<section class="py-16 bg-white">
 			<div class="container mx-auto px-4">
@@ -454,7 +297,7 @@
 		<section class="py-16 bg-white">
 			<div class="container mx-auto px-4">
 				<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-					Les Avantages de Matcher
+					Les Avantages de MatchRoom
 				</h2>
 
 				<div class="grid md:grid-cols-2 gap-8">
@@ -688,7 +531,7 @@
 			</div>
 		</section>
 
-		<section class="py-16 bg-primary text-tertiary-2">
+		<!-- <section class="py-16 bg-primary text-tertiary-2">
 			<div class="container mx-auto px-4 text-center">
 				<h2 class="text-3xl md:text-4xl font-bold mb-8">Notre Vision</h2>
 
@@ -705,9 +548,9 @@
 					entre l'offre et la demande.
 				</p>
 			</div>
-		</section>
+		</section> -->
 
-		<section
+		<!-- <section
 			class="py-16 bg-gradient-to-r from-primary to-secondary text-tertiary-2"
 		>
 			<div class="container mx-auto px-4 text-center">
@@ -738,7 +581,8 @@
 					</router-link>
 				</div>
 			</div>
-		</section>
+		</section> -->
+	
 	</div>
 </template>
 

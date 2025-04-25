@@ -1,6 +1,7 @@
 import express from "express";
 import rateLimit from "express-rate-limit";
 import authMiddleware from "../middleware/authMiddleware.js";
+import checkRole from "../middleware/checkRoleMiddleware.js";
 import {
   register,
   login,
@@ -15,7 +16,6 @@ import {
   logout,
 } from "../controllers/authController.js";
 import dotenv from "dotenv";
-import checkRole from "../middleware/checkRoleMiddleware.js";
 dotenv.config();
 
 const router = express.Router();
@@ -27,9 +27,12 @@ const router = express.Router();
 // 	message: "Trop de tentatives de connexion, réessayez dans 15 minutes",
 // });
 
+// Routes standard
 router.post("/register", register);
 router.post("/login", /* loginLimiter,*/ login);
 
+
+// Routes protégées
 router.put("/updatePassword", authMiddleware, updatePassword);
 router.put("/updateInfoHotel", authMiddleware, updateInfoHotel);
 router.put("/updateInfoUser", authMiddleware, updateInfoUser);
@@ -42,4 +45,4 @@ router.post("/2fa/setup", authMiddleware, setup2FA);
 router.post("/2fa/verify", verify2FA);
 router.post("/logout", authMiddleware, logout);
 
-export default router; // Add this line
+export default router;

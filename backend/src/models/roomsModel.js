@@ -2,7 +2,7 @@ import pool from "../config/db.js";
 
 const Room = {
 	create: async ({
-		userId,
+		user_id,
 		start_date,
 		end_date,
 		status,
@@ -16,7 +16,7 @@ const Room = {
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         `;
 		const { rows } = await pool.query(query, [
-			userId,
+			user_id,
 			start_date,
 			end_date,
 			status,
@@ -55,8 +55,7 @@ const Room = {
 		return rows;
 	},
 
-	update: async (room) => {
-		const { id, ...fields } = room;
+	update: async (id, fields) => {
 		const allowedFields = [
 			"start_date",
 			"end_date",
@@ -98,10 +97,30 @@ const Room = {
         DELETE FROM rooms
         WHERE id = ?
         `;
-		const { rows } = await pool.query(query, [id]);
+		await pool.query(query, [id]);
 
 		return { id };
 	},
+
+	// Méthodes additionnelles pour le dashboard hôtelier
+	findActiveByUserId: async (userId) => {
+		const query = `
+			SELECT * FROM rooms 
+			WHERE user_id = ? AND status = 'active' 
+			ORDER BY start_date ASC
+		`;
+		const { rows } = await pool.query(query, [userId]);
+		return rows;
+	},
+
+	countByUserId: async (userId) => {
+		const query = `
+			SELECT COUNT(*) as total FROM rooms
+			WHERE user_id = ?
+		`;
+		const { rows } = await pool.query(query, [userId]);
+		return rows[0].total;
+	}
 };
 
 export default Room;
