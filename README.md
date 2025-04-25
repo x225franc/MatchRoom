@@ -1,5 +1,5 @@
-#### MatchRoom
-### Présentation
+### MatchRoom
+## Présentation
 MatchRoom est un projet conçu pour offrir une expérience fluide de création et de gestion de salons virtuels.
 L'application permet aux utilisateurs de créer des salles, d'y inviter des participants et de chatter en temps réel.
 
