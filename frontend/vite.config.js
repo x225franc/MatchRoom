@@ -42,5 +42,7 @@ export default defineConfig({
 	define: {
 		"window.config.FRONTEND_URL": JSON.stringify("http://localhost:3000"),
 		"window.config.BACKEND_URL": JSON.stringify("http://localhost:3001"),
+		// "window.config.FRONTEND_URL": JSON.stringify("https://matchrooms.vercel.app"),
+		// "window.config.BACKEND_URL": JSON.stringify("https://matchroom.omnimat.ci"),
 	},
 });
