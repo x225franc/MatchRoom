@@ -1,16 +1,17 @@
 import pool from "../config/db.js";
 
 const User = {
-	create: async ({ email, password, name }) => {
+	create: async ({ email, password, name, role = "member", status = "active" }) => {
 		const query = `
-    INSERT INTO users (email, password, name, role, created_at)
-      VALUES (?, ?, ?, ?, ?)
+    INSERT INTO users (email, password, name, role, status, created_at)
+      VALUES (?, ?, ?, ?, ?, ?)
     `;
 		const { rows } = await pool.query(query, [
 			email,
 			password,
 			name,
-			"member",
+			role,
+			status,
 			new Date(),
 		]);
 		// En MySQL, nous devons récupérer l'ID inséré séparément
@@ -19,7 +20,7 @@ const User = {
 		const userId = idResult[0].id;
 
 		// Récupérer les informations de l'utilisateur créé
-		const selectQuery = "SELECT id, email, name, role FROM users WHERE id = ?";
+		const selectQuery = "SELECT id, email, name, role, status FROM users WHERE id = ?";
 		const { rows: userResult } = await pool.query(selectQuery, [userId]);
 		return userResult[0];
 	},

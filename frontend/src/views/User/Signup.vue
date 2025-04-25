@@ -357,7 +357,7 @@
 					const payload = {
 						...this.form,
 						role: this.role,
-						status: this.isHotelier ? "pending" : "active",
+						status: "active", // Définir le statut "active" pour tous les utilisateurs
 						tags:
 							this.isHotelier && this.form.tags
 								? this.form.tags.split(",").map((t) => t.trim())
