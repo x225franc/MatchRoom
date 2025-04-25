@@ -65,14 +65,12 @@
         </span>
       </button>
 
-      <!-- Affiche la photo si connecté, sinon le bouton -->
       <template v-if="isAuthenticated">
         <img
           src="@/assets/logo.png"
           alt="Profil"
           class="w-9 h-9 rounded-full object-cover border-2 border-white shadow"
         />
-        <!-- Bouton Déconnexion -->
         <button @click="logout">Se déconnecter</button>
       </template>
       <template v-else>
@@ -82,7 +80,6 @@
       </template>
     </nav>
 
-    <!-- mobile quick actions: DarkMode + Se connecter -->
     <div class="flex items-center space-x-4 md:hidden">
       <button @click="toggleDarkMode">
         <span v-if="isDark"
@@ -133,10 +130,8 @@
       </template>
     </div>
 
-    <!-- mobile slide-out menu with overlay -->
     <transition name="fade">
       <div v-if="showMenu" class="fixed inset-0 flex z-50">
-        <!-- slide-out drawer -->
         <nav
           class="w-3/5 h-screen bg-gradient-to-r from-[#BAA089] to-[#E8CEB7] flex flex-col p-6"
         >
@@ -164,7 +159,6 @@
           <a href="#" class="block py-2 hover:underline">FAQ</a>
         </nav>
 
-        <!-- overlay to blur and close menu on click -->
         <div
           @click="showMenu = false"
           class="w-2/5 h-screen backdrop-blur-sm"

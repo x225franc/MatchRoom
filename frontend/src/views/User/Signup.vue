@@ -4,7 +4,6 @@
   >
     <div class="max-w-md w-full bg-white rounded-lg shadow-xl overflow-hidden">
       <div class="p-6">
-        <!-- Remplacer l'image par le même SVG que Signin -->
         <svg
           class="mx-auto mb-4 cursor-pointer"
           width="155"
@@ -55,7 +54,6 @@
           Créer un compte {{ isHotelier ? "Hôtelier" : "Voyageur" }}
         </h2>
         <form @submit.prevent="handleRegister" class="space-y-6">
-          <!-- Champs communs -->
           <div class="relative mt-4">
             <svg
               class="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
@@ -156,7 +154,6 @@
               required
             />
           </div>
-          <!-- Champs spécifiques hôtelier -->
           <div v-if="isHotelier">
             <label
               for="description"
