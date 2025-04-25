@@ -180,7 +180,7 @@ async function fetchReservations() {
       { id: 'hotel_2', name: 'Hotel Magnifique', image: "/rooms/example2.jpg", rating: 5, alert: true, originalPrice: 250, agreedPrice: 240, status: 'Accepter', distance: '1,2km', address: 'Paris, adresse 2' },
       { id: 'hotel_3', name: 'Petit Hotel', image: "/rooms/example.jpg", rating: 3, alert: false, originalPrice: 180, agreedPrice: 170, status: 'Refus', distance: '5,0km', address: 'Paris, adresse 3' },
       { id: 'hotel_4', name: 'Grand Hotel Central', image: "/rooms/example2.jpg", rating: 4, alert: false, originalPrice: 210, agreedPrice: 210, status: 'En cours', distance: '0.5km', address: 'Paris, adresse 4' },
-      { id: 'hotel_5', name: 'Hotel Vue Mer', image: null, rating: 4, alert: false, originalPrice: 300, agreedPrice: 280, status: 'Accepter', distance: '10km', address: 'Nice, bord de mer' }, // Example with missing image
+      { id: 'hotel_5', name: 'Hotel Vue Mer', image: "/rooms/example2.jpg", rating: 4, alert: false, originalPrice: 300, agreedPrice: 280, status: 'Accepter', distance: '10km', address: 'Nice, bord de mer' }, // Example with missing image
     ];
     // --- END MOCK DATA ---
     console.log("Reservations fetched:", allHotels.value);

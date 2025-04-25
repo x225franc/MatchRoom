@@ -67,7 +67,7 @@
 
       <template v-if="isAuthenticated">
         <img
-          src="@/assets/logo.png"
+          src="@/assets/profil.png"
           alt="Profil"
           class="w-9 h-9 rounded-full object-cover border-2 border-white shadow"
         />
@@ -117,7 +117,7 @@
       </button>
       <template v-if="isAuthenticated">
         <img
-          src="@/assets/logo.png"
+          src="@/assets/profil.png"
           alt="Profil"
           class="w-8 h-8 rounded-full object-cover border-2 border-white shadow"
         />
@@ -154,9 +154,8 @@
               />
             </svg>
           </button>
-          <a href="#" class="block py-2 hover:underline">Accueil</a>
-          <a href="#" class="block py-2 hover:underline">A propos</a>
-          <a href="#" class="block py-2 hover:underline">FAQ</a>
+          <a href="#" class="block py-2 hover:underline" @click="router.push('/')">Accueil</a>
+          <a href="#" class="block py-2 hover:underline" @click="router.push('/choice')">Chercher un hôtel</a>
         </nav>
 
         <div

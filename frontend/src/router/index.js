@@ -37,6 +37,20 @@ const router = createRouter({
     routes,
 });
 
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('authToken');
+  const isAuthenticated = !!token;
+
+  const protectedRoutes = ['Choice', 'Swipe', 'Params', 'Reservations', 'Reservations2', 'Profile', 'Dashboard'];
+
+  if (protectedRoutes.includes(to.name) && !isAuthenticated) {
+    next({ name: 'Signin' }); 
+  } else {
+    next();
+  }
+});
+
+
 router.afterEach((to) => {
     const rawTitle = to.meta.title
     if (rawTitle) {
