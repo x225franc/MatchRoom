@@ -82,7 +82,7 @@
           </div>
           <div class="text-gray-500 text-sm flex items-center space-x-2">
             <span>📍 3,4km</span>
-            <span>Paris, adresse</span>
+            <span>Paris, 64 Rue de Ranelagh</span>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
       </div>
       <div class="text-gray-500 text-sm flex items-center space-x-2">
         <span>📍 3,4km</span>
-        <span>Paris, adresse</span>
+        <span>Paris, 32 Rue De Rivoli</span>
       </div>
 
       <div class="border-t pt-4 space-y-3">
@@ -192,11 +192,6 @@ const hotels = [
     image: "/rooms/example2.jpg",
     rating: 5,
     alert: true,
-  },
-  {
-    image: "/rooms/example.jpg",
-    rating: 3,
-    alert: false,
   },
 ];
 

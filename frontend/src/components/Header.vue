@@ -15,11 +15,7 @@
       </button>
      <img src="/logo.png" alt="Matchroom" class="hidden md:block ml-5 mt-1 w-20  duration-200 hover:scale-105 cursor-pointer" @click="router.push('/')" />
   </div>
-
-		<!-- desktop nav -->
 		<nav class="hidden md:flex items-center space-x-6 text-sm md:text-base">
-
-			<!-- DarkMode toggle -->
 			<button @click="toggleDarkMode">
 				<span v-if="isDark"
 					><svg
@@ -135,30 +131,18 @@
 		<transition name="fade">
 			<div v-if="showMenu" class="fixed inset-0 flex z-50">
 				<!-- slide-out drawer -->
-				<nav
-					class="w-3/5 h-screen bg-gradient-to-r from-[#BAA089] to-[#E8CEB7] flex flex-col p-6"
-				>
-					<!-- close button -->
-					<button
-						@click="showMenu = false"
-						class="self-end mb-6 p-2 focus:outline-none"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="h-6 w-6"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M6 18L18 6M6 6l12 12"
-							/>
-						</svg>
-					</button>
-				</nav>
+				<nav class="w-3/5 h-screen bg-gradient-to-r from-[#BAA089] to-[#E8CEB7] flex flex-col p-6">
+           <button @click="showMenu = false" class="self-end mb-6 p-2 focus:outline-none">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                     d="M6 18L18 6M6 6l12 12"/>
+             </svg>
+           </button>
+           <a href="#" class="block py-2 hover:underline">Accueil</a>
+           <a href="#" class="block py-2 hover:underline">A propos</a>
+           <a href="#" class="block py-2 hover:underline">FAQ</a>
+         </nav>
 
 				<!-- overlay to blur and close menu on click -->
 				<div
