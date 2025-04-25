@@ -474,7 +474,7 @@ async function handleSwipe(direction) {
 
     try {
       const priceId = "price_1RHo5zPqIGsIWpx4lGdn1X1S";
-      const quantity = Math.round(agreedPrice);
+      const quantity = 1;
 
       if (!priceId || priceId === "YOUR_PRICE_ID_HERE") {
         alert("Stripe Price ID chưa được cấu hình trong code!");
