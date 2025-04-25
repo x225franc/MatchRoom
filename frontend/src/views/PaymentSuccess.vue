@@ -30,9 +30,6 @@ const route = useRoute();
 const sessionId = ref('');
 
 onMounted(() => {
-    // Lấy session_id từ query params để hiển thị (tùy chọn)
     sessionId.value = route.query.session_id || 'N/A';
-    // Tại đây, bạn có thể gọi API backend để xác nhận trạng thái thanh toán bằng session_id nếu cần
-    // Ví dụ: axios.post('/api/payment/verify', { sessionId: sessionId.value });
 });
 </script>

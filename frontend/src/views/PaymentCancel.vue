@@ -20,5 +20,4 @@
 </template>
 
 <script setup>
-// Không cần logic phức tạp ở đây, chỉ hiển thị thông báo
 </script>

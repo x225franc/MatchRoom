@@ -13,13 +13,11 @@ if (token) {
 
 const app = createApp(App);
 
-// Met à jour dynamiquement le titre de la page
 router.beforeEach((to, from, next) => {
-	document.title = to.meta.title || "matchroom"; // Définit un titre par défaut si aucune meta n'est définie
+	document.title = to.meta.title || "matchroom"; 
 	next();
 });
 
-// Configurer les intercepteurs d'authentification
 authService.setupInterceptors(router);
 
 app.use(router);
