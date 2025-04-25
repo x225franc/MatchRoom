@@ -120,7 +120,7 @@
 import { ref, onMounted, computed } from "vue";
 import { loadStripe } from "@stripe/stripe-js";
 
-const filters = ['En cours', 'Accepter', 'Refus'];
+const filters = ['En cours', 'Acceptées', 'Refus'];
 const activeFilter = ref(filters[0]); 
 const allHotels = ref([]); 
 const selectedHotel = ref(null); 
@@ -154,10 +154,10 @@ async function fetchReservations() {
   try {
     allHotels.value = [
       { id: 'hotel_1', name: 'Hotel de Paris', image: "/rooms/example.jpg", rating: 4, alert: false, originalPrice: 230, agreedPrice: 220, status: 'En cours', distance: '3,4km', address: 'Paris, 32 Rue de Rivoli' },
-      { id: 'hotel_2', name: 'Hotel Magnifique', image: "/rooms/example2.jpg", rating: 5, alert: true, originalPrice: 250, agreedPrice: 240, status: 'Accepter', distance: '1,2km', address: 'Paris, 64 Rue de Ranelagh' },
+      { id: 'hotel_2', name: 'Hotel Magnifique', image: "/rooms/example2.jpg", rating: 5, alert: true, originalPrice: 250, agreedPrice: 240, status: 'Acceptées', distance: '1,2km', address: 'Paris, 64 Rue de Ranelagh' },
       { id: 'hotel_3', name: 'Petit Hotel', image: "/rooms/example.jpg", rating: 3, alert: false, originalPrice: 180, agreedPrice: 170, status: 'Refus', distance: '5,0km', address: 'Paris, 242 Faubourg Saint-Antoine' },
       { id: 'hotel_4', name: 'Grand Hotel Central', image: "/rooms/example2.jpg", rating: 4, alert: false, originalPrice: 210, agreedPrice: 210, status: 'En cours', distance: '0.5km', address: 'Paris, 6 Place Vandetta' },
-      { id: 'hotel_5', name: 'Hotel Vue Mer', image: "/rooms/example.jpg", rating: 4, alert: false, originalPrice: 300, agreedPrice: 280, status: 'Accepter', distance: '10km', address: 'Nice, Promenade des Anglais' }, 
+      { id: 'hotel_5', name: 'Hotel Vue Mer', image: "/rooms/example.jpg", rating: 4, alert: false, originalPrice: 300, agreedPrice: 280, status: 'Acceptées', distance: '10km', address: 'Nice, Promenade des Anglais' }, 
     ];
     console.log("Reservations fetched:", allHotels.value);
   } catch (error) {
