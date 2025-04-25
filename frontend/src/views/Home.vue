@@ -1,6 +1,5 @@
 <template>
 	<div class="relative text-white font-serif">
-		<!-- Section d'en-tête originale de Home avec image de Rome -->
 		<div
 			class="relative bg-cover bg-center bg-no-repeat min-h-[80vh] flex items-center justify-center px-4"
 			style="background-image: url('/rome.webp')"
@@ -591,16 +590,13 @@
 	export default {
 		name: "HomePage",
 		created() {
-			// On pourrait ajouter ici des traqueurs d'événements ou d'autres logiques d'initialisation
 		},
 		methods: {
-			// Méthodes pour gérer les interactions utilisateur si nécessaire
 		},
 	};
 </script>
 
 <style scoped>
-	/* Animations et styles spécifiques si nécessaires */
 	.landing-page {
 		overflow-x: hidden;
 	}

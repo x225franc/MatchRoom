@@ -216,6 +216,8 @@
 <script setup>
 import { ref, reactive, onMounted, nextTick } from "vue";
 import { useRoute } from "vue-router";
+import { useRouter } from "vue-router";
+const router = useRouter();
 
 const offerAmount = ref("");
 const offerSentMessageVisible = ref(false);
@@ -401,9 +403,17 @@ function submitOffer() {
   offerAmount.value = "";
   offerSentMessageVisible.value = true;
 
-  setTimeout(() => {
-    offerSentMessageVisible.value = false;
-  }, 3000);
+  offerSentMessageVisible.value = false;
+
+  router.push({
+    name: "Reservations",
+    query: {
+      amount: amount,
+      from,
+      to,
+      people,
+    },
+  });
 }
 </script>
 

@@ -71,12 +71,10 @@
 import { ref, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-// Route & navigation
 const route = useRoute()
 const router = useRouter()
-const city = route.params.city // récupère le paramètre dynamique
+const city = route.params.city 
 
-// Date logic
 const today = new Date()
 const currentMonth = ref(today.getMonth())
 const currentYear = ref(today.getFullYear())
@@ -140,14 +138,12 @@ function formatted(date) {
   return `${dd}/${mm}`
 }
 
-// Travellers logic
 const travellers = ref({ adults: 0, children: 0, infants: 0 })
 const changeCount = (type, delta) => {
   travellers.value[type] = Math.max(0, travellers.value[type] + delta)
 }
 const totalTravellers = computed(() => travellers.value.adults + travellers.value.children + travellers.value.infants)
 
-// Actions
 const canSearch = computed(() => totalTravellers.value > 0 && dateFrom.value && dateTo.value)
 
 function reset() {
@@ -160,7 +156,7 @@ function search() {
   if (canSearch.value) {
     router.push({
       name: 'Swipe',
-      params: { city }, // conserve le paramètre city
+      params: { city }, 
       query: {
         people: totalTravellers.value,
         from: formatted(dateFrom.value),
