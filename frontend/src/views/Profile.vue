@@ -1,18 +1,22 @@
 <template>
-  <div class="min-h-screen bg-white">
+  <div class="min-h-screen bg-white dark:bg-neutral-900">
     <div class="flex flex-col items-center py-6">
       <img
         src="/profil.png"
         alt="profile"
         class="w-24 h-24 rounded-full object-cover"
       />
-      <h2 class="text-xl font-semibold mt-2">Jean Dujardin</h2>
+      <h2 class="text-xl font-semibold mt-2 dark:text-white">Jean Dujardin</h2>
 
-      <div class="w-90 mt-4 bg-black py-3 px-7 rounded-xl">
-        <p class="text-center text-sm mt-1 font-normal text-gray-100 mb-2">
+      <div class="w-90 mt-4 bg-black py-3 px-7 rounded-xl dark:bg-neutral-300">
+        <p
+          class="text-center text-sm mt-1 font-normal text-gray-100 mb-2 dark:text-black"
+        >
           Niveau 2 - Explorateur Dégourdi | 1000/1500 P
         </p>
-        <div class="bg-gray-200 rounded-full h-2 overflow-hidden">          
+        <div
+          class="bg-gray-200 rounded-full h-2 overflow-hidden dark:bg-neutral-700"
+        >
           <div
             class="bg-[#bd8b5e] h-full rounded-full"
             style="width: 66%"
@@ -22,7 +26,7 @@
     </div>
 
     <div class="px-6">
-      <h3 class="font-semibold text-lg mb-2">Mes badges</h3>
+      <h3 class="font-semibold text-lg mb-2 dark:text-white">Mes badges</h3>
       <div class="flex justify-center space-x-4">
         <div class="flex flex-col items-center text-center">
           <svg
@@ -60,7 +64,9 @@
               </radialGradient>
             </defs>
           </svg>
-          <span class="text-sm mt-1 text-center">Premier Match</span>
+          <span class="text-sm mt-1 text-center dark:text-white">
+            Premier Match</span
+          >
         </div>
         <div class="flex flex-col items-center text-center">
           <svg
@@ -99,7 +105,9 @@
             </defs>
           </svg>
 
-          <span class="text-sm mt-1 text-center">Négociateur expert</span>
+          <span class="text-sm mt-1 text-center dark:text-white">
+            Négociateur expert</span
+          >
         </div>
         <div class="flex flex-col items-center text-center">
           <svg
@@ -139,7 +147,9 @@
             </defs>
           </svg>
 
-          <span class="text-sm mt-1 text-center">Fidèle Voyageur</span>
+          <span class="text-sm mt-1 text-center dark:text-white">
+            Fidèle Voyageur</span
+          >
         </div>
         <div class="flex flex-col items-center text-center">
           <svg
@@ -181,15 +191,21 @@
               </radialGradient>
             </defs>
           </svg>
-          <span class="text-sm mt-1 text-center">Glob Trotteur</span>
+          <span class="text-sm mt-1 text-center dark:text-white">
+            Glob Trotteur</span
+          >
         </div>
       </div>
     </div>
 
     <div class="px-6 mt-6">
-      <h3 class="font-semibold text-lg mb-2">Gérer mon compte</h3>
+      <h3 class="font-semibold text-lg mb-2 dark:text-white">
+        Gérer mon compte
+      </h3>
       <div class="space-y-2">
-        <div class="flex justify-between items-center p-4 border rounded-lg">
+        <div
+          class="flex justify-between items-center p-4 border rounded-lg dark:border-neutral-700 dark:bg-neutral-800"
+        >
           <div class="flex items-center space-x-2">
             <svg
               width="20"
@@ -197,32 +213,34 @@
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              class="text-black dark:text-white"
             >
               <path
                 d="M7.00033 8.33317C8.84127 8.33317 10.3337 6.84079 10.3337 4.99984C10.3337 3.15889 8.84127 1.6665 7.00033 1.6665C5.15938 1.6665 3.66699 3.15889 3.66699 4.99984C3.66699 6.84079 5.15938 8.33317 7.00033 8.33317Z"
-                fill="black"
+                fill="currentColor"
               />
               <path
                 d="M13.6663 14.5835C13.6663 16.6543 13.6663 18.3335 6.99967 18.3335C0.333008 18.3335 0.333008 16.6543 0.333008 14.5835C0.333008 12.5127 3.31801 10.8335 6.99967 10.8335C10.6813 10.8335 13.6663 12.5127 13.6663 14.5835Z"
-                fill="black"
+                fill="currentColor"
               />
             </svg>
-            <span>Information personnel</span>
+            <span class="dark:text-white"> Informations personnelles</span>
           </div>
           <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            fill="none"
+            fill=""
             xmlns="http://www.w3.org/2000/svg"
+            class="text-black dark:text-white"
           >
             <path
               d="M12.31 6.70978C12.2173 6.80229 12.1438 6.91218 12.0936 7.03315C12.0434 7.15413 12.0176 7.28381 12.0176 7.41478C12.0176 7.54575 12.0434 7.67543 12.0936 7.7964C12.1438 7.91738 12.2173 8.02726 12.31 8.11978L16.19 11.9998L12.31 15.8798C12.123 16.0668 12.018 16.3204 12.018 16.5848C12.018 16.8492 12.123 17.1028 12.31 17.2898C12.497 17.4768 12.7506 17.5818 13.015 17.5818C13.2794 17.5818 13.533 17.4768 13.72 17.2898L18.31 12.6998C18.4027 12.6073 18.4763 12.4974 18.5265 12.3764C18.5766 12.2554 18.6025 12.1257 18.6025 11.9948C18.6025 11.8638 18.5766 11.7341 18.5265 11.6132C18.4763 11.4922 18.4027 11.3823 18.31 11.2898L13.72 6.69978C13.34 6.31978 12.7 6.31978 12.31 6.70978Z"
-              fill="black"
+              fill="currentColor"
             />
           </svg>
         </div>
-        <div class="flex justify-between items-center p-4 border rounded-lg">
+        <div class="flex justify-between items-center p-4 border rounded-lg dark:border-neutral-700 dark:bg-neutral-800">
           <div class="flex items-center space-x-2">
             <svg
               width="20"
@@ -230,13 +248,15 @@
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              class="text-black dark:text-white"
             >
               <path
                 d="M5.00016 18.3335C4.54183 18.3335 4.14961 18.1704 3.8235 17.8443C3.49738 17.5182 3.33405 17.1257 3.3335 16.6668V8.3335C3.3335 7.87516 3.49683 7.48294 3.8235 7.15683C4.15016 6.83072 4.54238 6.66739 5.00016 6.66683H5.8335V5.00016C5.8335 3.84739 6.23989 2.86489 7.05266 2.05266C7.86544 1.24044 8.84794 0.834052 10.0002 0.833497C11.1524 0.832941 12.1352 1.23933 12.9485 2.05266C13.7618 2.866 14.1679 3.8485 14.1668 5.00016V6.66683H15.0002C15.4585 6.66683 15.851 6.83016 16.1777 7.15683C16.5043 7.4835 16.6674 7.87572 16.6668 8.3335V16.6668C16.6668 17.1252 16.5038 17.5177 16.1777 17.8443C15.8516 18.171 15.4591 18.3341 15.0002 18.3335H5.00016ZM10.0002 14.1668C10.4585 14.1668 10.851 14.0038 11.1777 13.6777C11.5043 13.3516 11.6674 12.9591 11.6668 12.5002C11.6663 12.0413 11.5032 11.6491 11.1777 11.3235C10.8521 10.9979 10.4596 10.8346 10.0002 10.8335C9.54072 10.8324 9.1485 10.9957 8.8235 11.3235C8.4985 11.6513 8.33516 12.0435 8.3335 12.5002C8.33183 12.9568 8.49516 13.3493 8.8235 13.6777C9.15183 14.006 9.54405 14.1691 10.0002 14.1668ZM7.50016 6.66683H12.5002V5.00016C12.5002 4.30572 12.2571 3.71544 11.771 3.22933C11.2849 2.74322 10.6946 2.50016 10.0002 2.50016C9.30572 2.50016 8.71544 2.74322 8.22933 3.22933C7.74322 3.71544 7.50016 4.30572 7.50016 5.00016V6.66683Z"
-                fill="black"
+                fill="currentColor"
               />
             </svg>
-            <span>Paramètre de sécurité</span>
+            <span class="dark:text-white">
+              Paramètres de sécurité</span>
           </div>
           <svg
             width="24"
@@ -244,10 +264,11 @@
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            class="text-black dark:text-white"
           >
             <path
               d="M12.31 6.70978C12.2173 6.80229 12.1438 6.91218 12.0936 7.03315C12.0434 7.15413 12.0176 7.28381 12.0176 7.41478C12.0176 7.54575 12.0434 7.67543 12.0936 7.7964C12.1438 7.91738 12.2173 8.02726 12.31 8.11978L16.19 11.9998L12.31 15.8798C12.123 16.0668 12.018 16.3204 12.018 16.5848C12.018 16.8492 12.123 17.1028 12.31 17.2898C12.497 17.4768 12.7506 17.5818 13.015 17.5818C13.2794 17.5818 13.533 17.4768 13.72 17.2898L18.31 12.6998C18.4027 12.6073 18.4763 12.4974 18.5265 12.3764C18.5766 12.2554 18.6025 12.1257 18.6025 11.9948C18.6025 11.8638 18.5766 11.7341 18.5265 11.6132C18.4763 11.4922 18.4027 11.3823 18.31 11.2898L13.72 6.69978C13.34 6.31978 12.7 6.31978 12.31 6.70978Z"
-              fill="black"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -255,9 +276,9 @@
     </div>
 
     <div class="px-6 mt-6">
-      <h3 class="font-semibold text-lg mb-2">Paiement</h3>
+      <h3 class="font-semibold text-lg mb-2 dark:text-white">Paiement</h3>
       <div class="space-y-2">
-        <div class="flex justify-between items-center p-4 border rounded-lg">
+        <div class="flex justify-between items-center p-4 border rounded-lg dark:border-neutral-700 dark:bg-neutral-800">
           <div class="flex items-center space-x-2">
             <svg
               width="20"
@@ -265,13 +286,15 @@
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              class="text-black dark:text-white"
             >
               <path
                 d="M5.00016 18.3335C4.54183 18.3335 4.14961 18.1704 3.8235 17.8443C3.49738 17.5182 3.33405 17.1257 3.3335 16.6668V8.3335C3.3335 7.87516 3.49683 7.48294 3.8235 7.15683C4.15016 6.83072 4.54238 6.66739 5.00016 6.66683H5.8335V5.00016C5.8335 3.84739 6.23989 2.86489 7.05266 2.05266C7.86544 1.24044 8.84794 0.834052 10.0002 0.833497C11.1524 0.832941 12.1352 1.23933 12.9485 2.05266C13.7618 2.866 14.1679 3.8485 14.1668 5.00016V6.66683H15.0002C15.4585 6.66683 15.851 6.83016 16.1777 7.15683C16.5043 7.4835 16.6674 7.87572 16.6668 8.3335V16.6668C16.6668 17.1252 16.5038 17.5177 16.1777 17.8443C15.8516 18.171 15.4591 18.3341 15.0002 18.3335H5.00016ZM10.0002 14.1668C10.4585 14.1668 10.851 14.0038 11.1777 13.6777C11.5043 13.3516 11.6674 12.9591 11.6668 12.5002C11.6663 12.0413 11.5032 11.6491 11.1777 11.3235C10.8521 10.9979 10.4596 10.8346 10.0002 10.8335C9.54072 10.8324 9.1485 10.9957 8.8235 11.3235C8.4985 11.6513 8.33516 12.0435 8.3335 12.5002C8.33183 12.9568 8.49516 13.3493 8.8235 13.6777C9.15183 14.006 9.54405 14.1691 10.0002 14.1668ZM7.50016 6.66683H12.5002V5.00016C12.5002 4.30572 12.2571 3.71544 11.771 3.22933C11.2849 2.74322 10.6946 2.50016 10.0002 2.50016C9.30572 2.50016 8.71544 2.74322 8.22933 3.22933C7.74322 3.71544 7.50016 4.30572 7.50016 5.00016V6.66683Z"
-                fill="black"
+                fill="currentColor"
               />
             </svg>
-            <span>Mon portefeuille</span>
+            <span class="dark:text-white">
+              Mon portefeuille</span>
           </div>
           <svg
             width="24"
@@ -279,14 +302,15 @@
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            class="text-black dark:text-white"
           >
             <path
               d="M12.31 6.70978C12.2173 6.80229 12.1438 6.91218 12.0936 7.03315C12.0434 7.15413 12.0176 7.28381 12.0176 7.41478C12.0176 7.54575 12.0434 7.67543 12.0936 7.7964C12.1438 7.91738 12.2173 8.02726 12.31 8.11978L16.19 11.9998L12.31 15.8798C12.123 16.0668 12.018 16.3204 12.018 16.5848C12.018 16.8492 12.123 17.1028 12.31 17.2898C12.497 17.4768 12.7506 17.5818 13.015 17.5818C13.2794 17.5818 13.533 17.4768 13.72 17.2898L18.31 12.6998C18.4027 12.6073 18.4763 12.4974 18.5265 12.3764C18.5766 12.2554 18.6025 12.1257 18.6025 11.9948C18.6025 11.8638 18.5766 11.7341 18.5265 11.6132C18.4763 11.4922 18.4027 11.3823 18.31 11.2898L13.72 6.69978C13.34 6.31978 12.7 6.31978 12.31 6.70978Z"
-              fill="black"
+              fill="currentColor"
             />
           </svg>
         </div>
-        <div class="flex justify-between items-center p-4 border rounded-lg">
+        <div class="flex justify-between items-center p-4 border rounded-lg dark:border-neutral-700 dark:bg-neutral-800">
           <div class="flex items-center space-x-2">
             <svg
               width="24"
@@ -294,6 +318,7 @@
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              class="text-black dark:text-white"
             >
               <mask
                 id="mask0_191_186"
@@ -316,10 +341,11 @@
                 />
               </mask>
               <g mask="url(#mask0_191_186)">
-                <path d="M0 0H24V24H0V0Z" fill="black" />
+                <path d="M0 0H24V24H0V0Z" fill="currentColor" />
               </g>
             </svg>
-            <span>Moyen de paiement</span>
+            <span class="dark:text-white">
+              Moyen(s) de paiement</span>
           </div>
           <svg
             width="24"
@@ -327,10 +353,11 @@
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            class="text-black dark:text-white"
           >
             <path
               d="M12.31 6.70978C12.2173 6.80229 12.1438 6.91218 12.0936 7.03315C12.0434 7.15413 12.0176 7.28381 12.0176 7.41478C12.0176 7.54575 12.0434 7.67543 12.0936 7.7964C12.1438 7.91738 12.2173 8.02726 12.31 8.11978L16.19 11.9998L12.31 15.8798C12.123 16.0668 12.018 16.3204 12.018 16.5848C12.018 16.8492 12.123 17.1028 12.31 17.2898C12.497 17.4768 12.7506 17.5818 13.015 17.5818C13.2794 17.5818 13.533 17.4768 13.72 17.2898L18.31 12.6998C18.4027 12.6073 18.4763 12.4974 18.5265 12.3764C18.5766 12.2554 18.6025 12.1257 18.6025 11.9948C18.6025 11.8638 18.5766 11.7341 18.5265 11.6132C18.4763 11.4922 18.4027 11.3823 18.31 11.2898L13.72 6.69978C13.34 6.31978 12.7 6.31978 12.31 6.70978Z"
-              fill="black"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -338,17 +365,26 @@
     </div>
 
     <div class="flex justify-center mt-8 mb-6">
-      <button class="bg-black text-white px-6 py-2 rounded-full">
+      <button
+        @click="logout"
+        class="bg-black text-white px-6 py-2 rounded-full dark:bg-white dark:text-black"
+      >
         Me déconnecter
       </button>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "ProfilePage",
-};
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+function logout() {
+  localStorage.removeItem("authToken");
+  router.push("/").then(() => {
+    window.location.href = "/";
+  });
+}
 </script>
 
 <style scoped></style>

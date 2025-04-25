@@ -39,7 +39,7 @@
           </span>
           <!-- Price Tag -->
           <div class="absolute bottom-2 right-2 bg-black/80 text-white text-sm px-3 py-1 rounded-lg z-20 backdrop-blur-sm">
-            {{ hotel.agreedPrice }} /nuit €
+            {{ hotel.agreedPrice }}€/nuit
             <div class="text-xs text-gray-300">Taxe et frais compris</div>
           </div>
         </div>
@@ -66,7 +66,7 @@
       <div class="relative">
         <img :src="selectedHotel.image || '/placeholder.jpg'" @error="onImageError" class="w-full h-52 object-cover rounded-xl" :alt="selectedHotel.name" />
         <div class="absolute bottom-2 right-2 bg-black/80 text-white text-sm px-3 py-1 rounded-lg backdrop-blur-sm">
-          {{ selectedHotel.agreedPrice }} /nuit €
+          {{ selectedHotel.agreedPrice }}€/nuit
           <div class="text-xs text-gray-300">Taxe et frais compris</div>
         </div>
       </div>

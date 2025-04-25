@@ -1,47 +1,50 @@
 <template>
-  <div class="relative text-white font-serif">
-    <div
-      class="relative bg-cover bg-center bg-no-repeat min-h-[80vh] flex items-center justify-center px-4"
-      style="background-image: url('/rome.webp')"
-    >
-      <div
-        class="bg-black bg-opacity-60 w-full h-full absolute top-0 left-0 z-0"
-      ></div>
-      <div class="z-10 text-center">
-        <p class="text-[#E8CEB7] text-sm tracking-widest mb-2">
-          La Nouvelle Façon de Réserver Votre Hôtel Idéal
-        </p>
-        <h1 class="text-4xl md:text-4xl font-bold leading-tight mb-4">
-          MatchRoom - Réservez Votre Hôtel Idéal
-        </h1>
-        <button
-          class="bg-gradient-to-b from-[#BAA089] to-[#E8CEB7] text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-400 transition"
-          @click="goToChoice"
-        >
-          DÉCOUVRIR PLUS →
-        </button>
-      </div>
+<div class="relative text-white font-serif dark:bg-black">
+  <div
+    class="relative bg-cover bg-center bg-no-repeat min-h-[80vh] flex items-center justify-center px-4 dark:bg-black dark:bg-opacity-80"
+    style="background-image: url('/rome.webp')"
+  >
+    <div class="bg-black bg-opacity-60 w-full h-full absolute top-0 left-0 z-0 dark:bg-black dark:bg-opacity-80"></div>
+    <div class="z-10 text-center">
+      <p class="text-[#E8CEB7] text-sm tracking-widest mb-2 dark:text-[#CBBBA0]">
+        La Nouvelle Façon de Réserver Votre Hôtel Idéal
+      </p>
+      <h1 class="text-4xl md:text-4xl font-bold leading-tight mb-4 dark:text-white">
+        MatchRoom - Réservez Votre Hôtel Idéal
+      </h1>
+      <button
+        class="bg-gradient-to-b from-[#BAA089] to-[#E8CEB7] text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-400 transition dark:from-[#8B7B66] dark:to-[#CBBBA0] dark:text-black"
+        @click="goToChoice"
+      >
+        DÉCOUVRIR PLUS →
+      </button>
     </div>
   </div>
+</div>
   <div class="landing-page">
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white dark:bg-black">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white">
           Notre Solution : L'Intelligence du Matching
         </h2>
 
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="w-full md:w-1/2 mb-8 md:mb-0">
+        <div
+          class="flex flex-col md:flex-row items-center md:items-stretch md:space-x-12"
+        >
+          <!-- Vidéo -->
+          <div class="w-full md:w-1/2 flex justify-center">
             <div
-              class="w-full h-48 sm:h-64 md:h-64 lg:h-80 bg-tertiary flex items-center justify-center rounded-lg"
+              class="h-48 sm:h-64 md:h-64 lg:h-80 rounded-lg overflow-hidden"
             >
-              <span class="text-tertiary-2 text-xl font-semibold text-center">
-                Processus de matching
-              </span>
+              <video class="h-full object-cover" autoplay muted loop>
+                <source src="/algo.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la vidéo HTML5.
+              </video>
             </div>
           </div>
 
-          <div class="w-full md:w-1/2 md:pl-12">
+          <!-- Texte -->
+          <div class="w-full md:w-1/2 flex flex-col justify-center md:pl-0">
             <ul class="space-y-4">
               <li class="flex items-start">
                 <div class="bg-primary-light rounded-full p-2 mr-4">
@@ -60,12 +63,12 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-semibold text-lg">
-                    Algorithme de matching unique
-                  </h3>
-                  <p class="text-tertiary">
-                    Qui associe clients et hôtels selon des critères précis
-                  </p>
+                  <h3 class="font-semibold text-lg dark:text-white">
+  Algorithme de matching unique
+</h3>
+<p class="text-tertiary dark:text-gray-400">
+  Qui associe clients et hôtels selon des critères précis
+</p>
                 </div>
               </li>
 
@@ -86,10 +89,10 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-semibold text-lg">
+                  <h3 class="font-semibold text-lg dark:text-white">
                     Valorisation de l'unicité
                   </h3>
-                  <p class="text-tertiary">
+                  <p class="text-tertiary dark:text-gray-400">
                     Une plateforme qui met en avant les spécificités de chaque
                     établissement
                   </p>
@@ -113,10 +116,10 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-semibold text-lg">
+                  <h3 class="font-semibold text-lg dark:text-white">
                     Expérience personnalisée
                   </h3>
-                  <p class="text-tertiary">
+                  <p class="text-tertiary dark:text-gray-400">
                     Adaptée aux besoins spécifiques de chaque voyageur
                   </p>
                 </div>
@@ -127,183 +130,17 @@
       </div>
     </section>
 
-    <section class="py-16 bg-primary-light">
+    <section class="py-16 bg-white dark:bg-black">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-          Comment Ça Fonctionne ?
-        </h2>
-
-        <div class="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 class="text-2xl font-semibold mb-6 text-primary">
-              Pour les Voyageurs
-            </h3>
-            <div class="space-y-8">
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white text-xl font-bold"
-                  >
-                    1
-                  </div>
-                </div>
-                <div class="ml-4">
-                  <h4 class="text-lg font-medium">Créez votre profil</h4>
-                  <p class="mt-1 text-tertiary">
-                    Partagez vos préférences, style de voyage et priorités
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white text-xl font-bold"
-                  >
-                    2
-                  </div>
-                </div>
-                <div class="ml-4">
-                  <h4 class="text-lg font-medium">Exprimez vos besoins</h4>
-                  <p class="mt-1 text-tertiary">
-                    Pour chaque voyage, précisez vos attentes spécifiques
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white text-xl font-bold"
-                  >
-                    3
-                  </div>
-                </div>
-                <div class="ml-4">
-                  <h4 class="text-lg font-medium">Découvrez vos matches</h4>
-                  <p class="mt-1 text-tertiary">
-                    Notre algorithme vous présente les établissements parfaits
-                    pour vous
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white text-xl font-bold"
-                  >
-                    4
-                  </div>
-                </div>
-                <div class="ml-4">
-                  <h4 class="text-lg font-medium">
-                    Réservez en toute confiance
-                  </h4>
-                  <p class="mt-1 text-tertiary">
-                    Avec l'assurance d'une expérience alignée avec vos attentes
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="text-2xl font-semibold mb-6 text-secondary">
-              Pour les Hôteliers
-            </h3>
-            <div class="space-y-8">
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white text-xl font-bold"
-                  >
-                    1
-                  </div>
-                </div>
-                <div class="ml-4">
-                  <h4 class="text-lg font-medium">
-                    Mettez en avant votre unicité
-                  </h4>
-                  <p class="mt-1 text-tertiary">
-                    Présentez les caractéristiques qui rendent votre
-                    établissement spécial
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white text-xl font-bold"
-                  >
-                    2
-                  </div>
-                </div>
-                <div class="ml-4">
-                  <h4 class="text-lg font-medium">
-                    Définissez votre clientèle idéale
-                  </h4>
-                  <p class="mt-1 text-tertiary">
-                    Identifiez les voyageurs qui apprécieront le plus votre
-                    offre
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white text-xl font-bold"
-                  >
-                    3
-                  </div>
-                </div>
-                <div class="ml-4">
-                  <h4 class="text-lg font-medium">
-                    Attirez des clients satisfaits
-                  </h4>
-                  <p class="mt-1 text-tertiary">
-                    Accueillez des voyageurs qui recherchent précisément ce que
-                    vous offrez
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white text-xl font-bold"
-                  >
-                    4
-                  </div>
-                </div>
-                <div class="ml-4">
-                  <h4 class="text-lg font-medium">
-                    Construisez votre réputation
-                  </h4>
-                  <p class="mt-1 text-tertiary">
-                    Développez votre notoriété auprès de votre public cible
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-          Les Avantages de MatchRoom
-        </h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white">
+    Les Avantages de MatchRoom
+  </h2>
 
         <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-primary-light p-8 rounded-lg">
-            <h3 class="text-2xl font-semibold mb-6 text-primary">
-              Pour les Voyageurs
-            </h3>
+          <div class="bg-primary-light dark:bg-gray-800 p-8 rounded-lg">
+  <h3 class="text-2xl font-semibold mb-6 text-primary dark:text-[#E8CEB7]">
+    Pour les Voyageurs
+  </h3>
             <ul class="space-y-4">
               <li class="flex items-start">
                 <svg
@@ -319,8 +156,9 @@
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <div>
-                  <span class="font-medium">Gain de temps considérable</span> -
+                <div class="dark:text-neutral-200">
+                  <span class="font-medium dark:text-white">
+                    Gain de temps considérable</span> -
                   Fini les heures de recherche, notre IA fait le travail pour
                   vous
                 </div>
@@ -339,8 +177,8 @@
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <div>
-                  <span class="font-medium"
+                <div class="dark:text-neutral-200">
+                  <span class="font-medium dark:text-white">
                     >Recommandations personnalisées</span
                   >
                   - Des suggestions qui correspondent réellement à vos attentes
@@ -360,8 +198,9 @@
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <div>
-                  <span class="font-medium">Découvertes uniques</span> - Accédez
+                <div class="dark:text-neutral-200">
+                  <span class="font-medium dark:text-white">
+                    Découvertes uniques</span> - Accédez
                   à des établissements qui vous auraient échappé sur les
                   plateformes traditionnelles
                 </div>
@@ -380,18 +219,19 @@
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <div>
-                  <span class="font-medium">Satisfaction garantie</span> - Une
+                <div class="dark:text-neutral-200">
+                  <span class="font-medium dark:text-white">
+                    Satisfaction garantie</span> - Une
                   correspondance optimale entre vos besoins et l'offre hôtelière
                 </div>
               </li>
             </ul>
           </div>
 
-          <div class="bg-secondary-light p-8 rounded-lg">
-            <h3 class="text-2xl font-semibold mb-6 text-secondary">
-              Pour les Hôteliers
-            </h3>
+          <div class="bg-secondary-light dark:bg-gray-800 p-8 rounded-lg">
+  <h3 class="text-2xl font-semibold mb-6 text-secondary dark:text-[#CBBBA0]">
+    Pour les Hôteliers
+  </h3>
             <ul class="space-y-4">
               <li class="flex items-start">
                 <svg
@@ -407,8 +247,9 @@
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <div>
-                  <span class="font-medium">Marketing ciblé et efficace</span> -
+                <div class="dark:text-neutral-200">
+                  <span class="font-medium dark:text-white">
+                    Marketing ciblé et efficace</span> -
                   Touchez directement les clients qui valorisent votre offre
                 </div>
               </li>
@@ -426,8 +267,9 @@
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <div>
-                  <span class="font-medium">Différenciation stratégique</span> -
+                <div class="dark:text-neutral-200">
+                  <span class="font-medium dark:text-white">
+                    Différenciation stratégique</span> -
                   Mettez en avant vos points forts uniques
                 </div>
               </li>
@@ -445,8 +287,9 @@
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <div>
-                  <span class="font-medium">Clientèle plus satisfaite</span> -
+                <div class="dark:text-neutral-200">
+                  <span class="font-medium dark:text-white">
+                    Clientèle plus satisfaite</span> -
                   Accueillez des voyageurs dont les attentes correspondent à
                   votre réalité
                 </div>
@@ -465,8 +308,9 @@
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <div>
-                  <span class="font-medium">Meilleur taux d'occupation</span> -
+                <div class="dark:text-neutral-200">
+                  <span class="font-medium dark:text-white">
+                    Meilleur taux d'occupation</span> -
                   Optimisez votre remplissage avec des clients adaptés
                 </div>
               </li>
@@ -476,14 +320,14 @@
       </div>
     </section>
 
-    <section class="py-16 bg-tertiary-2">
+    <section class="py-16 bg-tertiary-2 dark:bg-black">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
           Ils Ont Trouvé Leur Match Parfait
         </h2>
 
         <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
             <div class="flex items-center mb-4">
               <div
                 class="h-12 w-12 rounded-full bg-tertiary mr-4 flex items-center justify-center"
@@ -492,11 +336,12 @@
               </div>
 
               <div>
-                <h4 class="font-semibold">Sophie M.</h4>
-                <p class="text-tertiary text-sm">Consultante</p>
+                <h4 class="font-semibold dark:text-white">Sophie M.</h4>
+<p class="text-tertiary text-sm dark:text-gray-400">Consultante</p>
+
               </div>
             </div>
-            <p class="text-tertiary italic">
+            <p class="text-tertiary italic dark:text-gray-400">
               "Grâce à Matcher, j'ai découvert un hôtel-boutique qui
               correspondait exactement à mes attentes pour mon voyage d'affaires
               à Lyon. Une expérience sur mesure que je n'aurais jamais trouvée
@@ -504,7 +349,7 @@
             </p>
           </div>
 
-          <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
             <div class="flex items-center mb-4">
               <div
                 class="h-12 w-12 rounded-full bg-tertiary mr-4 flex items-center justify-center"
@@ -513,13 +358,13 @@
               </div>
 
               <div>
-                <h4 class="font-semibold">Jean D.</h4>
-                <p class="text-tertiary text-sm">
+                <h4 class="font-semibold dark:text-white">Jean D.</h4>
+                <p class="text-tertiary text-sm dark:text-gray-400">
                   Propriétaire de l'Hôtel Le Charme
                 </p>
               </div>
             </div>
-            <p class="text-tertiary italic">
+            <p class="text-tertiary italic dark:text-gray-400">
               "En tant que petit hôtel indépendant, nous avions du mal à nous
               démarquer. Matcher nous a permis d'attirer une clientèle qui
               apprécie réellement notre philosophie et nos services. Notre taux
@@ -529,58 +374,6 @@
         </div>
       </div>
     </section>
-
-    <!-- <section class="py-16 bg-primary text-tertiary-2">
-			<div class="container mx-auto px-4 text-center">
-				<h2 class="text-3xl md:text-4xl font-bold mb-8">Notre Vision</h2>
-
-				<p class="text-xl max-w-3xl mx-auto">
-					Matcher aspire à transformer l'industrie hôtelière en créant un
-					écosystème où chaque voyageur trouve l'hébergement parfaitement adapté
-					à ses besoins, et où chaque établissement accueille les clients qui
-					apprécieront véritablement son offre.
-				</p>
-
-				<p class="text-xl max-w-3xl mx-auto mt-6">
-					Nous croyons en un avenir où la réservation hôtelière n'est plus une
-					loterie, mais une science précise basée sur la compatibilité réelle
-					entre l'offre et la demande.
-				</p>
-			</div>
-		</section> -->
-
-    <!-- <section
-			class="py-16 bg-gradient-to-r from-primary to-secondary text-tertiary-2"
-		>
-			<div class="container mx-auto px-4 text-center">
-				<h2 class="text-3xl md:text-4xl font-bold mb-8">
-					Rejoignez la Révolution Matcher Dès Aujourd'hui
-				</h2>
-
-				<p class="text-xl max-w-3xl mx-auto mb-12">
-					Transformez votre façon de voyager ou d'accueillir. Faites partie de
-					l'avenir de l'hôtellerie.
-				</p>
-
-				<div
-					class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8"
-				>
-					<router-link
-						to="/signup?type=traveler"
-						class="bg-tertiary-2 text-primary hover:bg-tertiary-2-dark px-8 py-4 rounded-lg font-bold text-lg transition duration-300 shadow-lg transform hover:-translate-y-1"
-					>
-						MATCHER !
-					</router-link>
-
-					<router-link
-						to="/signup?type=hotelier"
-						class="bg-transparent border-2 border-tertiary-2 hover:bg-tertiary-2 hover:text-primary px-8 py-4 rounded-lg font-bold text-lg transition duration-300 shadow-lg transform hover:-translate-y-1"
-					>
-						DEVENIR HÔTELIER
-					</router-link>
-				</div>
-			</div>
-		</section> -->
   </div>
 </template>
 
@@ -598,10 +391,9 @@ export default {
   methods: {
     goToChoice() {
       this.$router.push("/choice");
-    }
-  }
+    },
+  },
 };
-
 </script>
 
 <style scoped>

@@ -69,8 +69,10 @@
         <img
           src="@/assets/profil.png"
           alt="Profil"
-          class="w-9 h-9 rounded-full object-cover border-2 border-white shadow"
+          class="w-9 h-9 rounded-full object-cover border-2 border-white shadow cursor-pointer"
+          @click="router.push('/profile')"
         />
+
         <button @click="logout">Se déconnecter</button>
       </template>
       <template v-else>
@@ -119,8 +121,10 @@
         <img
           src="@/assets/profil.png"
           alt="Profil"
-          class="w-8 h-8 rounded-full object-cover border-2 border-white shadow"
+          class="w-9 h-9 rounded-full object-cover border-2 border-white shadow cursor-pointer"
+          @click="router.push('/profile')"
         />
+
         <button @click="logout">Se déconnecter</button>
       </template>
       <template v-else>
@@ -154,8 +158,18 @@
               />
             </svg>
           </button>
-          <a href="#" class="block py-2 hover:underline" @click="router.push('/')">Accueil</a>
-          <a href="#" class="block py-2 hover:underline" @click="router.push('/choice')">Chercher un hôtel</a>
+          <a
+            href="#"
+            class="block py-2 hover:underline"
+            @click="router.push('/')"
+            >Accueil</a
+          >
+          <a
+            href="#"
+            class="block py-2 hover:underline"
+            @click="router.push('/choice')"
+            >Chercher un hôtel</a
+          >
         </nav>
 
         <div
