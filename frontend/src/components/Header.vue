@@ -1,32 +1,20 @@
 <template>
-	<header
-		class="relative w-full bg-gradient-to-b from-[#BAA089] to-[#E8CEB7] text-white px-6 py-4 flex items-center justify-between transition-colors duration-300"
-	>
-		<!-- left side: burger on mobile, logo on desktop -->
-		<div class="flex items-center">
-			<!-- burger menu (mobile) -->
-			<button
-				@click="showMenu = !showMenu"
-				class="md:hidden p-2 focus:outline-none"
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M4 6h16M4 12h16M4 18h16"
-					/>
-				</svg>
-			</button>
-			<!-- logo (desktop) -->
-			<h1 class="hidden md:block text-2xl font-bold">Matchroom</h1>
-		</div>
+  <header
+    class="relative w-full bg-gradient-to-b from-[#BAA089] to-[#E8CEB7] text-white px-6 py-4 flex items-center justify-between transition-colors duration-300"
+  >
+    <div class="flex items-center">
+      <button
+        @click="showMenu = !showMenu"
+        class="md:hidden p-2 focus:outline-none"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+     <img src="/logo.png" alt="Matchroom" class="hidden md:block ml-5 mt-1 w-20  duration-200 hover:scale-105 cursor-pointer" @click="router.push('/')" />
+  </div>
 
 		<!-- desktop nav -->
 		<nav class="hidden md:flex items-center space-x-6 text-sm md:text-base">
