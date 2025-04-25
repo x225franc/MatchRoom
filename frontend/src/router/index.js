@@ -4,6 +4,7 @@ import Choice from '@/views/Choice.vue';
 import Swipe from '@/views/Swipe.vue';
 import Params from '@/views/Params.vue';
 import Reservations from '@/views/Reservations.vue';
+import Profile from '@/views/Profile.vue';
 import Signin from '@/views/User/Signin.vue';
 import Signup from '@/views/User/Signup.vue';
 import Dashboard from '@/views/Dashboard.vue';
@@ -24,6 +25,7 @@ const routes = [
 
     { path: '/payment-success', name: 'PaymentSuccess', component: PaymentSuccess, meta: { title: 'Payment Successful - MatchRoom', showHeaderFooter: true } },
     { path: '/payment-cancel', name: 'PaymentCancel', component: PaymentCancel, meta: { title: 'Payment Cancelled - MatchRoom', showHeaderFooter: true } },
+    { path : '/profile', name: 'Profile', component: Profile, meta: { title: 'MatchRoom - Profile', showHeaderFooter: true } },
 
     { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { title: 'Dashboard', showHeaderFooter: false } },
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: Notfound, meta: { title: '404 - Page non trouvée', showHeaderFooter: false } },

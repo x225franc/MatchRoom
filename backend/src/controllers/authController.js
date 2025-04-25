@@ -9,7 +9,7 @@ import {
 } from "../utils/authUtils.js";
 
 const register = async (req, res) => {
-	const { email, password, name } = req.body;
+	const { email, password, name, role, status } = req.body;
 
 	if (!email || !password || !name) {
 		return res.status(400).json({ message: "Mettre ton email et password" });
@@ -21,7 +21,14 @@ const register = async (req, res) => {
 			return res.status(400).json({ message: "Email déjà utilisé" });
 
 		const hashedPassword = await bcrypt.hash(password, 10);
-		const user = await User.create({ email, password: hashedPassword, name });
+		const userData = {
+			email,
+			password: hashedPassword,
+			name,
+			role: role,
+			status: status,
+		};
+		const user = await User.create(userData);
 		res
 			.status(201)
 			.json({ message: "Utilisateur enregistré", userId: user.id });
