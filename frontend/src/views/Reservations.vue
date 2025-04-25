@@ -177,11 +177,11 @@ async function fetchReservations() {
   try {
     // --- MOCK DATA --- Replace this with API response
     allHotels.value = [
-      { id: 'hotel_1', name: 'Hotel de Paris', image: "/rooms/example.jpg", rating: 4.5, alert: false, originalPrice: 230, agreedPrice: 220, status: 'En cours', distance: '3,4km', address: 'Paris, adresse 1' },
-      { id: 'hotel_2', name: 'Hotel Magnifique', image: "/rooms/example2.jpg", rating: 5, alert: true, originalPrice: 250, agreedPrice: 240, status: 'Accepter', distance: '1,2km', address: 'Paris, adresse 2' },
-      { id: 'hotel_3', name: 'Petit Hotel', image: "/rooms/example.jpg", rating: 3, alert: false, originalPrice: 180, agreedPrice: 170, status: 'Refus', distance: '5,0km', address: 'Paris, adresse 3' },
-      { id: 'hotel_4', name: 'Grand Hotel Central', image: "/rooms/example2.jpg", rating: 4, alert: false, originalPrice: 210, agreedPrice: 210, status: 'En cours', distance: '0.5km', address: 'Paris, adresse 4' },
-      { id: 'hotel_5', name: 'Hotel Vue Mer', image: null, rating: 4, alert: false, originalPrice: 300, agreedPrice: 280, status: 'Accepter', distance: '10km', address: 'Nice, bord de mer' }, // Example with missing image
+      { id: 'hotel_1', name: 'Hotel de Paris', image: "/rooms/example.jpg", rating: 4, alert: false, originalPrice: 230, agreedPrice: 220, status: 'En cours', distance: '3,4km', address: 'Paris, 32 Rue de Rivoli' },
+      { id: 'hotel_2', name: 'Hotel Magnifique', image: "/rooms/example2.jpg", rating: 5, alert: true, originalPrice: 250, agreedPrice: 240, status: 'Accepter', distance: '1,2km', address: 'Paris, 64 Rue de Ranelagh' },
+      { id: 'hotel_3', name: 'Petit Hotel', image: "/rooms/example.jpg", rating: 3, alert: false, originalPrice: 180, agreedPrice: 170, status: 'Refus', distance: '5,0km', address: 'Paris, 242 Faubourg Saint-Antoine' },
+      { id: 'hotel_4', name: 'Grand Hotel Central', image: "/rooms/example2.jpg", rating: 4, alert: false, originalPrice: 210, agreedPrice: 210, status: 'En cours', distance: '0.5km', address: 'Paris, 6 Place Vandetta' },
+      { id: 'hotel_5', name: 'Hotel Vue Mer', image: "/rooms/example.jpg", rating: 4, alert: false, originalPrice: 300, agreedPrice: 280, status: 'Accepter', distance: '10km', address: 'Nice, Promenade des Anglais' }, 
     ];
     // --- END MOCK DATA ---
     console.log("Reservations fetched:", allHotels.value);
