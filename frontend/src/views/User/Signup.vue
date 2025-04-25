@@ -78,7 +78,7 @@
 							type="text"
 							id="name"
 							v-model="form.name"
-							placeholder="Entrer votre nom complet"
+							:placeholder="isHotelier ? 'Entrer le nom de votre hotel' : 'Entrer votre email'"
 							class="w-full px-8 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500"
 							required
 						/>
@@ -179,6 +179,8 @@
 							type="text"
 							id="siret"
 							v-model="form.siret"
+							:maxlength="14"
+							:pattern="isHotelier ? '^[0-9]{14}$' : ''"
 							placeholder="Numéro SIRET"
 							class="w-full px-8 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500"
 						/>
@@ -357,7 +359,7 @@
 					const payload = {
 						...this.form,
 						role: this.role,
-						status: "active", // Définir le statut "active" pour tous les utilisateurs
+						status: "active",
 						tags:
 							this.isHotelier && this.form.tags
 								? this.form.tags.split(",").map((t) => t.trim())

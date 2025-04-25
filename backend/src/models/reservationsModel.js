@@ -141,6 +141,40 @@ const Reservation = {
 
 		return reservationResult[0];
 	},
+
+	/**
+	 * Finds all active reservations for rooms managed by a specific hôtelier.
+	 * @param {number} userId - The ID of the hôtelier.
+	 * @returns {Promise<object[]>} An array of reservation objects.
+	 */
+	findActiveByUserId: async (userId) => {
+		const query = `
+			SELECT r.*, rm.price, rm.start_date, rm.end_date, u.name as user_name, u.email as user_email
+			FROM reservation r
+			JOIN rooms rm ON r.rooms_id = rm.id
+			JOIN users u ON r.user_id = u.id
+			WHERE rm.user_id = ? AND r.status IN ('pending', 'confirmed')
+			ORDER BY r.createdAt DESC
+		`;
+		const { rows } = await pool.query(query, [userId]);
+		return rows;
+	},
+
+	/**
+	 * Counts pending reservations for a specific hôtelier.
+	 * @param {number} userId - The ID of the hôtelier.
+	 * @returns {Promise<number>} The count of pending reservations.
+	 */
+	countPendingByHotelierId: async (userId) => {
+		const query = `
+			SELECT COUNT(*) as count
+			FROM reservation r
+			JOIN rooms rm ON r.rooms_id = rm.id
+			WHERE rm.user_id = ? AND r.status = 'pending'
+		`;
+		const { rows } = await pool.query(query, [userId]);
+		return rows[0].count;
+	}
 };
 
 export default Reservation;
