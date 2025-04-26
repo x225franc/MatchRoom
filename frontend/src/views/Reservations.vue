@@ -124,7 +124,7 @@
           <div
             class="absolute bottom-2 right-2 bg-black/80 text-white text-sm px-3 py-1 rounded-lg z-20 backdrop-blur-sm dark:bg-white/80 dark:text-black"
           >
-            {{ hotel.agreedPrice }}€/nuit 
+            {{ hotel.originalPrice }}€/nuit 
             <div class="text-xs text-gray-300 dark:text-neutral-600">
               Taxe et frais compris
             </div>
@@ -186,7 +186,7 @@
         <div
           class="absolute bottom-2 right-2 bg-black/80 text-white text-sm px-3 py-1 rounded-lg backdrop-blur-sm dark:bg-white/80 dark:text-black"
         >
-          {{ selectedHotel.agreedPrice }}€/nuit
+          {{ selectedHotel.originalPrice }}€/nuit
           <div class="text-xs text-gray-300">Taxe et frais compris</div>
         </div>
       </div>
