@@ -233,7 +233,7 @@
           <div
             class="bg-orange-100 text-orange-800 p-3 rounded-lg max-w-[75%] text-sm dark:bg-orange-900 dark:text-orange-300"
           >
-            Prix négocié du client à {{ selectedHotel.originalPrice - 10 }} €
+            Prix négocié du client à {{ selectedHotel.originalPrice - 30 }} €
           </div>
         </div>
         <div class="flex justify-start items-start space-x-2">
@@ -247,7 +247,7 @@
             class="bg-gray-100 text-gray-800 p-3 rounded-lg max-w-[75%] text-sm dark:bg-neutral-700 dark:text-white"
           >
             L’hôtelier vous propose cette chambre pour
-            {{ selectedHotel.agreedPrice }} €
+            {{ selectedHotel.originalPrice - 10}} €
           </div>
         </div>
 

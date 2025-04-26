@@ -158,13 +158,13 @@
         <h3 class="font-semibold text-lg">Contre proposition</h3>
         <div class="flex justify-end">
           <div class="bg-orange-100 text-orange-800 p-3 rounded-lg max-w-[75%] text-sm">
-            Prix négocié du client à {{ selectedHotel.originalPrice - 10 }} €
+            Prix négocié du client à {{ selectedHotel.originalPrice - 30 }} €
           </div>
         </div>
         <div class="flex justify-start items-start space-x-2">
           <img :src="selectedHotel.image || '/placeholder.jpg'" @error="onImageError" class="w-8 h-8 rounded-full object-cover flex-shrink-0" alt="Hotel avatar"/>
           <div class="bg-gray-100 text-gray-800 p-3 rounded-lg max-w-[75%] text-sm">
-            L’hôtelier vous propose cette chambre pour {{ selectedHotel.agreedPrice }} €
+            L’hôtelier vous propose cette chambre pour {{ selectedHotel.originalPrice - 10 }} €
           </div>
         </div>
 
